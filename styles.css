@@ -61,7 +61,9 @@ nav a {
 /* Set the width and height for the slider container */
 .slider-container {
     width: 800px; /* Set the desired width */
+    max-width: 100%; /* Allow the container to be as wide as the viewport */
     height: 400px; /* Set the desired height */
+    max-height: 100%; /* Allow the container to be as wide as the viewport */
     overflow: hidden;
 }
 .slider {
@@ -124,5 +126,10 @@ footer {
     nav a {
         display: block;
         padding: 1rem 0;
+    }
+
+     /* Adjust styles for smaller screens as needed */
+     .slide-text {
+        display: block; /* Show text on smaller screens */
     }
 }
