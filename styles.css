@@ -58,17 +58,20 @@ nav a {
 }
 
 /* Add basic styles for the slider */
+/* Set the width and height for the slider container */
 .slider-container {
-    width: 100%;
+    width: 800px; /* Set the desired width */
+    height: 400px; /* Set the desired height */
     overflow: hidden;
 }
 .slider {
     display: flex;
     transition: transform 0.5s ease-in-out;
 }
-img {
-    width: 100%;
-    height: auto;
+/* Set the width and height for the slider images */
+.slider img {
+    width: 100%; /* Ensure images fill the container width */
+    height: 100%; /* Ensure images fill the container height */
 }
 
 
