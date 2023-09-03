@@ -1,8 +1,17 @@
 /* Reset some default browser styles */
 body, h1, h2, h3, p, ul, ol, li {
+    min-height: 100vh;
     margin: 0;
-    padding: 0;
+    display: flex;
+    flex-direction: column;
 }
+
+/* Style for the main content area */
+.content {
+    flex-grow: 1; /* Allow content to grow and push the footer down */
+    padding: 20px; /* Add some padding for spacing */
+}
+
 
 /* Set a background color for the entire page */
 body {
