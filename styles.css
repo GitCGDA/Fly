@@ -130,13 +130,5 @@ footer {
         padding: 1rem 0;
     }
 
-    /* Adjust the container width for smaller screens */
-    .slider-container {
-        width: 100%; /* Make the container full-width for smaller screens */
-    }
 
-     /* Adjust styles for smaller screens as needed */
-     .slide-text {
-        display: block; /* Show text on smaller screens */
-    }
 }
