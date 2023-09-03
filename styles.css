@@ -76,6 +76,28 @@ nav a {
     height: 100%; /* Ensure images fill the container height */
 }
 
+/* Style for slide text */
+.slide-text {
+    /* Add your text styles here */
+    position: absolute;
+    bottom: 0; /* Position the text at the bottom of the slide */
+    left: 0; /* Position the text at the left of the slide */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    color: #fff;
+    padding: 10px;
+}
+
+/* Style for slide headings and paragraphs */
+.slide-text h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.slide-text p {
+    margin: 0;
+    font-size: 1rem;
+}
+
 
 /* Paragraph text styles */
 p {
