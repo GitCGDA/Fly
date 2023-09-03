@@ -74,7 +74,7 @@ nav a {
 /* Set the width and height for the slider images */
 .slider img {
     width: 100%; /* Ensure images fill the container width */
-    height: 50%; /* Ensure images fill the container height */
+    height: 100%; /* Ensure images fill the container height */
 }
 
 
