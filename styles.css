@@ -1,0 +1,201 @@
+/* Reset some default browser styles */
+body, h1, h2, h3, p, ul, ol, li {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Style for the main content area */
+.content {
+    flex-grow: 1; /* Allow content to grow and push the footer down */
+    padding: 20px; /* Add some padding for spacing */
+}
+
+
+/* Set a background color for the entire page */
+body {
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+/* Head styles */
+head {
+    background-color: #ffffff;
+    color: #0f0e0e;
+    padding: 10px;
+}
+
+/* Header styles */
+header {
+    background-color: #ffffff;
+    color: #0f0e0e;
+    padding: 10px;
+}
+
+/* Navigation menu */
+nav {
+    background-color: #e8e4e4;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000000;
+}
+
+/* Main content styles */
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Section heading styles */
+.section-header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Add basic styles for the slider */
+/* Set the width and height for the slider container */
+.slider-container {
+    width: 800px; /* Set the desired width */
+    max-width: 100%; /* Allow the container to be as wide as the viewport */
+    height: 400px; /* Set the desired height */
+    max-height: 100%; /* Allow the container to be as wide as the viewport */
+    overflow: hidden;
+}
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+/* Set the width and height for the slider images */
+.slider img {
+    width: 100%; /* Ensure images fill the container width */
+    height: 100%; /* Ensure images fill the container height */
+}
+
+
+/* Styles for individual slides */
+.slide {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Style for slide images */
+.slide img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Style for slide text */
+.slide-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 20px;
+    width: 100%;
+    transform: translateY(100%);
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Style for slide headings and paragraphs */
+.slide-text h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.slide-text p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Hover effect to slide the text up */
+.slide:hover img {
+    transform: translateY(-20%);
+}
+
+.slide:hover .slide-text {
+    transform: translateY(0);
+}
+
+
+/* Paragraph text styles */
+p {
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Link styles */
+a {
+    color: #0f0e0e;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Button styles */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    /* Styles for screens up to 768px wide */
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    nav a {
+        display: block;
+        padding: 1rem 0;
+    }
+
+    /* Adjust the container width for smaller screens */
+    .slider-container {
+        width: 100%; /* Make the container full-width for smaller screens */
+    }
+
+     /* Adjust styles for smaller screens as needed */
+     .slide-text {
+        display: block; /* Show text on smaller screens */
+    }
+}
