@@ -6,7 +6,7 @@ body, h1, h2, h3, p, ul, ol, li {
 
 /* Set a background color for the entire page */
 body {
-    background-color: #f0f0f0;
+    background-color: #ffffff;
     font-family: Arial, sans-serif;
 }
 
@@ -26,7 +26,7 @@ header {
 
 /* Navigation menu */
 nav {
-    background-color: #444;
+    background-color: #e8e4e4;
 }
 
 nav ul {
@@ -40,7 +40,7 @@ nav li {
 
 nav a {
     text-decoration: none;
-    color: #fff;
+    color: #000000;
 }
 
 /* Main content styles */
