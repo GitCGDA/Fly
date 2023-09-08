@@ -63,67 +63,50 @@ nav a {
 
 
 
-/* Styles for the slider container */
-.slider-container {
+/* Styles for the text box */
+.text-box {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.text-box h2 {
+    margin: 0;
+}
+
+/* Styles for the slide container */
+.slide-container {
     max-width: 800px;
     margin: 0 auto;
-    position: relative;
     overflow: hidden;
-    text-align: center;
 }
 
 /* Styles for individual slides */
 .slide {
-    display: none;
-    text-align: center;
-    position: relative;
-}
-
-.slide img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Styles for slide content */
-.slide-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 20px;
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    max-width: 70%;
 }
 
-.slide-content h2 {
+/* Styles for slide text */
+.slide-text {
+    flex: 1;
+    padding: 20px;
+}
+
+.slide-text h2 {
     margin: 0;
 }
 
-/* Styles for navigation buttons */
-.prev-next-buttons {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.prev-button, .next-button {
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin: 5px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-/* Responsive Design */
-@media (max-width: 600px) {
-    .slide-content {
-        max-width: 90%;
-    }
+/* Styles for slide images */
+.slide img {
+    max-width: 100%;
+    height: auto;
+    flex: 1;
 }
 
 
