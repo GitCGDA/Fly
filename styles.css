@@ -76,6 +76,8 @@ nav a {
     display: none;
     padding: 20px;
     text-align: center;
+    display: flex;
+    align-items: center; /* Center text vertically */
 }
 
 .slide img {
@@ -87,10 +89,9 @@ nav a {
 
 /* Style the slide text */
 .slide-text {
-    text-align: center;
-    background-color: #333;
-    color: white;
-    padding: 10px;
+    text-align: left; /* Text on the left */
+    flex: 1; /* Take up remaining space */
+    padding: 20px; /* Add spacing */
 }
 
 .slide-text h2 {
