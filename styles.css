@@ -63,12 +63,21 @@ nav a {
 
 
 
-/* Styles for the image slider */
-.image-slider {
-    overflow: hidden;
+/* Styles for the slider container */
+.slider-container {
+    display: flex;
+    align-items: center;
     max-width: 800px;
     margin: 0 auto;
+    overflow: hidden;
     position: relative;
+    margin-bottom: 20px;
+}
+
+/* Styles for the slider */
+.slider {
+    overflow: hidden;
+    flex: 1;
 }
 
 .slide {
@@ -82,8 +91,8 @@ nav a {
 
 /* Styles for the text box */
 .text-box {
-    max-width: 400px;
-    margin: 20px auto;
+    flex: 1;
+    margin-left: 20px;
     padding: 20px;
     background-color: #f7f7f7;
     text-align: center;
