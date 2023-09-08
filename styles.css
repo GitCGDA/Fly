@@ -58,24 +58,92 @@ nav a {
     margin-bottom: 20px;
 }
 
-/* Add basic styles for the slider */
-/* Set the width and height for the slider container */
+
+
+
+
+
+/* Style the slides */
 .slider-container {
-    width: 800px; /* Set the desired width */
-    max-width: 100%; /* Allow the container to be as wide as the viewport */
-    height: 400px; /* Set the desired height */
-    max-height: 100%; /* Allow the container to be as wide as the viewport */
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
     overflow: hidden;
+    text-align: center;
 }
-.slider {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
+
+.slide {
+    display: none;
+    padding: 20px;
+    text-align: center;
 }
-/* Set the width and height for the slider images */
-.slider img {
-    width: 100%; /* Ensure images fill the container width */
-    height: 100%; /* Ensure images fill the container height */
+
+.slide img {
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+    max-height: 300px;
 }
+
+/* Style the slide text */
+.slide-text {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+
+.slide-text h2 {
+    margin: 0;
+}
+
+/* Style the navigation buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+/* Add a fade effect to the slides */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .slider-container {
+        max-width: 100%;
+    }
+
+    .slide img {
+        max-height: 200px;
+    }
+}
+
+
 
 
 
