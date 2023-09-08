@@ -85,6 +85,7 @@ nav a {
     height: auto;
     width: 50%;
     max-height: 300px;
+    order: 2; /* Display image on the right */
 }
 
 /* Style the slide text */
@@ -92,6 +93,7 @@ nav a {
     text-align: left; /* Text on the left */
     flex: 1; /* Take up remaining space */
     padding: 20px; /* Add spacing */
+    order: 1; /* Display text on the left */
 }
 
 .slide-text h2 {
@@ -141,10 +143,13 @@ nav a {
 
     .slide img {
         max-height: 200px;
-    }
-    
-    .slide img, .slide-text {
         width: 100%;
+    }
+
+    .slide-text {
+        order: 2;
+        padding: 20px;
+        text-align: center;
     }
 }
 
