@@ -63,47 +63,32 @@ nav a {
 
 
 
-/* Styles for the container */
+/* Basic styles for the container */
 .container {
     display: flex;
+    align-items: center; /* Vertically align the content */
     max-width: 800px;
     margin: 0 auto;
-    margin-bottom: 20px;
+    padding: 20px;
 }
 
-/* Styles for the slider container */
-.slider-container {
-    flex: 1;
-    overflow: hidden;
-    position: relative;
-}
-
-/* Styles for the slider */
-.slider {
-    display: flex;
-    transition: transform 0.5s ease;
-}
-
-.slide {
-    flex: 0 0 100%;
-}
-
-.slide img {
+/* Styles for the image */
+img {
     max-width: 100%;
     height: auto;
 }
 
-/* Styles for the text box */
-.text-box {
-    flex: 1;
-    margin-left: 20px;
-    padding: 20px;
-    background-color: #f7f7f7;
-    text-align: center;
+/* Styles for the text */
+.text {
+    margin-left: 20px; /* Add spacing between the image and text */
 }
 
-.text-box h2 {
-    margin: 0;
+.text h2 {
+    margin: 0; /* Remove default margin for the heading */
+}
+
+.text p {
+    margin: 0; /* Remove default margin for the paragraph */
 }
 
 
