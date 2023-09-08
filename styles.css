@@ -63,25 +63,29 @@ nav a {
 
 
 
-/* Styles for the slider container */
-.slider-container {
+/* Styles for the container */
+.container {
     display: flex;
-    align-items: center;
     max-width: 800px;
     margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+/* Styles for the slider container */
+.slider-container {
+    flex: 1;
     overflow: hidden;
     position: relative;
-    margin-bottom: 20px;
 }
 
 /* Styles for the slider */
 .slider {
-    overflow: hidden;
-    flex: 1;
+    display: flex;
+    transition: transform 0.5s ease;
 }
 
 .slide {
-    display: none;
+    flex: 0 0 100%;
 }
 
 .slide img {

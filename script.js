@@ -15,11 +15,9 @@ function showSlide(n) {
         slideIndex = slides.length - 1;
     }
 
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-
-    slides[slideIndex].style.display = "block";
+    document.querySelectorAll(".slider").forEach((slider) => {
+        slider.style.transform = `translateX(-${slideIndex * 100}%)`;
+    });
 }
 
 // Automatic slide change every 3 seconds
