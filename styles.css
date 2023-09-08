@@ -63,50 +63,68 @@ nav a {
 
 
 
-/* Styles for the text box */
-.text-box {
-    background-color: #333;
-    color: white;
+/* Styles for the slider with text */
+.slider-with-text {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
     padding: 20px;
-    text-align: center;
-}
-
-.text-box h2 {
-    margin: 0;
+    background-color: #f7f7f7;
 }
 
 /* Styles for the slide container */
 .slide-container {
-    max-width: 800px;
-    margin: 0 auto;
-    overflow: hidden;
-}
-
-/* Styles for individual slides */
-.slide {
-    display: flex;
-    align-items: center;
-    margin: 20px 0;
-    background-color: #f7f7f7;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-/* Styles for slide text */
-.slide-text {
     flex: 1;
-    padding: 20px;
+    overflow: hidden;
+    position: relative;
 }
 
-.slide-text h2 {
-    margin: 0;
+/* Styles for the slides */
+.slides {
+    display: flex;
+    transition: transform 0.5s ease;
 }
 
-/* Styles for slide images */
+.slide {
+    flex: 0 0 100%;
+}
+
 .slide img {
     max-width: 100%;
     height: auto;
-    flex: 1;
+}
+
+/* Styles for navigation buttons */
+.prev-button, .next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.prev-button {
+    left: 0;
+}
+
+.next-button {
+    right: 0;
+}
+
+/* Styles for the text box */
+.text-box {
+    flex: 0 0 40%;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+.text-box h2 {
+    margin: 0;
 }
 
 

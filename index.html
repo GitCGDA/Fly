@@ -23,26 +23,24 @@
 
     <main>
         <section>
-            <div class="text-box">
-                <h2>Slide Information</h2>
-                <p>This text box is placed outside of the slide container.</p>
-            </div>
-            <div class="slide-container">
-                <div class="slide">
-                    <div class="slide-text">
-                        <h2>Slide 1</h2>
-                        <p>This is the first slide.</p>
+            <div class="slider-with-text">
+                <div class="slide-container">
+                    <div class="slides">
+                        <div class="slide">
+                            <img src="images/As.jpeg" alt="Slide 1">
+                        </div>
+                        <div class="slide">
+                            <img src="images/J.jpeg" alt="Slide 2">
+                        </div>
+                        <!-- Add more slides as needed -->
                     </div>
-                    <img src="images/As.jpeg" alt="Slide 1">
+                    <button class="prev-button" onclick="changeSlide(-1)">Previous</button>
+                    <button class="next-button" onclick="changeSlide(1)">Next</button>
                 </div>
-                <div class="slide">
-                    <div class="slide-text">
-                        <h2>Slide 2</h2>
-                        <p>This is the second slide.</p>
-                    </div>
-                    <img src="images/J.jpeg" alt="Slide 2">
+                <div class="text-box">
+                    <h2>Slide Information</h2>
+                    <p>This is a text box next to the slide container. You can provide additional information about the slides here.</p>
                 </div>
-                <!-- Add more slides as needed -->
             </div>
         
             <script src="script.js"></script>
