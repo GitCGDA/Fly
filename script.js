@@ -1,20 +1,29 @@
-let slideIndex = 1;
-showSlides(slideIndex);
+// JavaScript for the slider
+let slideIndex = 0;
+const slides = document.querySelectorAll('.slide');
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
+function showSlide(n) {
+    if (n < 0) {
+        slideIndex = slides.length - 1;
+    } else if (n >= slides.length) {
+        slideIndex = 0;
+    }
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = 'none';
+    }
+    slides[slideIndex].style.display = 'block';
 }
 
-function showSlides(n) {
-  const slides = document.getElementsByClassName("slide");
-  if (n > slides.length) {
-    slideIndex = 1;
-  }
-  if (n < 1) {
-    slideIndex = slides.length;
-  }
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  slides[slideIndex - 1].style.display = "block";
+function nextSlide() {
+    showSlide(slideIndex + 1);
+    slideIndex++;
 }
+
+function prevSlide() {
+    showSlide(slideIndex - 1);
+    slideIndex--;
+}
+
+// Automatically advance the slider
+setInterval(nextSlide, 5000); // Change slide every 5 seconds
+showSlide(slideIndex); // Show the initial slide

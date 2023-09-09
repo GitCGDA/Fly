@@ -63,76 +63,37 @@ nav a {
 
 
 
-/* Style for the slide container */
-.slide-container {
-    position: relative;
-    width: 100%; /* Use 100% width for mobile screens */
-    max-width: 400px; /* Set a max-width to maintain readability on larger screens */
-    margin: 0 auto; /* Center the container */
-    height: auto; /* Allow the container to adjust its height based on content */
+/* Styles for the slider container */
+.slider-container {
+    width: 100%;
+    max-width: 600px;
     overflow: hidden;
-  }
-  
-  /* Style for the slides */
-  .slide {
+    position: relative;
+}
+
+/* Styles for individual slides */
+.slide {
     display: none;
     width: 100%;
-    height: auto; /* Allow the slide to adjust its height based on content */
-    position: relative;
-    transition: opacity 0.5s;
-    display: flex;
-    flex-direction: column; /* Stack elements vertically on small screens */
-  }
-  
-  /* Style for the slide content (image and text) */
-  .slide-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center content horizontally */
-  }
-  
-  /* Style for the slide text */
-  .slide-text {
     text-align: center;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    font-size: 18px;
-  }
-  
-  /* Style for the slide image */
-  .slide-image {
-    max-width: 100%; /* Adjust as needed to fit the container */
-    height: auto; /* Allow the image to adjust its height based on its aspect ratio */
-  }
-  
-  /* Style for navigation buttons */
-  .prev, .next {
+}
+
+/* Styles for images in slides */
+.slide img {
+    width: 100%;
+    height: auto;
+}
+
+/* Styles for text in slides */
+.slide .slide-text {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    padding: 10px;
+    bottom: 20px;
+    left: 0;
+    right: 0;
     background-color: rgba(0, 0, 0, 0.5);
     color: #fff;
-    font-size: 18px;
-  }
-  
-  .prev {
-    left: 0;
-  }
-  
-  .next {
-    right: 0;
-  }
-  
-  /* Media query for screens smaller than 768px (adjust as needed) */
-  @media (max-width: 768px) {
-    .slide-container {
-      max-width: 100%; /* Use full width for small screens */
-    }
-  }
+    padding: 10px;
+}
 
 
 
