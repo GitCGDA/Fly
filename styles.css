@@ -87,7 +87,7 @@ body {
 
 /* Add some basic styles to the container */
 .container {
-    width: 400px; /* Set the desired width */
+    width: 200px; /* Set the desired width */
     display: flex; /* Use flexbox for layout */
     align-items: center; /* Vertically center items */
 }
