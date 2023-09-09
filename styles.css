@@ -44,7 +44,12 @@ nav a {
     color: #000000;
 }
 
-
+/* Main content styles */
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
 /* Section heading styles */
 .section-header {
@@ -55,7 +60,7 @@ nav a {
 
 h2 {
     text-align: center;
-    font-family: monospace; /* Change the font family */
+    font-family: 'Times New Roman', Times, serif; /* Change the font family */
       font-size: 36px; /* Change the font size */
       font-weight: bold; /* Change the font weight (e.g., bold) */
       font-style:; /* Change the font style (e.g., italic) */
@@ -71,41 +76,26 @@ h2 {
 
 
 
-  /* Add styles to center the container */
-  body {
-      display: flex;
-      justify-content: center; /* Center horizontally */
-      align-items: center; /* Center vertically */
-      height: 100vh; /* Make the body cover the entire viewport height */
-      margin: 0; /* Remove default margin */
-  }
-  
-  /* Add some basic styles to the container */
-  .container {
-      width: 400px; /* Set the desired width */
-      height: 200px; /* Set the desired height */
-      display: flex; /* Use flexbox for layout */
-      align-items: center; /* Vertically center items */
-  }
-  
-  /* Style for the image */
-  .image {
-      max-width: 100%; /* Set the maximum width to 100% of the container */
-      max-height: 100%; /* Set the maximum height to 100% of the container */
-      height: auto; /* Maintain aspect ratio */
-  }
-  
-  /* Style for the text */
-  .text {
-      margin-left: 20px; /* Add some space between image and text */
-  }
+/* Add some basic styles to the container */
+.container {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Vertically center items */
+}
+
+/* Style for the image */
+.image {
+    max-width: 100%; /* Set the maximum width to 100% of the container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Style for the text */
+.text {
+    margin-left: 20px; /* Add some space between image and text */
+}
 
 
 
 
-
-
-  
 
 .card-container {
     display: flex;
