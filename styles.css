@@ -44,12 +44,7 @@ nav a {
     color: #000000;
 }
 
-/* Main content styles */
-.container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 20px;
-}
+
 
 /* Section heading styles */
 .section-header {
