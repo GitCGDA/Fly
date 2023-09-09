@@ -80,6 +80,7 @@ h2 {
 /* Add some basic styles to the container */
 .container {
     width: 400px; /* Set the desired width */
+    height: 300px; /* Set the desired height (e.g., 300px) */
     display: flex; /* Use flexbox for layout */
     align-items: center; /* Vertically center items */
 }
