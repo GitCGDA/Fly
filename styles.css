@@ -63,50 +63,47 @@ nav a {
 
 
 
-/* Styles for the slideshow container */
-.slideshow-container {
-    max-width: 800px; /* Adjust the size of the container as needed */
+/* Styles for the container */
+.container {
+    display: flex;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+/* Styles for the slider container */
+.slider-container {
+    flex: 1;
+    overflow: hidden;
     position: relative;
-    margin: auto;
 }
 
-/* Styles for the individual slides */
+/* Styles for the slider */
+.slider {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
 .slide {
-    display: none;
+    flex: 0 0 100%;
 }
 
-/* Style for the images */
 .slide img {
-    width: 100%; /* Right-sized images */
+    max-width: 100%;
+    height: auto;
 }
 
-/* Style for the text content */
-.slide .text {
-    position: absolute;
-    top: 0;
-    left: 0;
+/* Styles for the text box */
+.text-box {
+    flex: 1;
+    margin-left: 20px;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-}
-
-/* Style for the navigation indicators */
-.indicators {
+    background-color: #f7f7f7;
     text-align: center;
 }
 
-.indicator {
-    display: inline-block;
-    margin: 0 5px;
-    width: 10px;
-    height: 10px;
-    background-color: #bbb;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.indicator.active {
-    background-color: #717171;
+.text-box h2 {
+    margin: 0;
 }
 
 
