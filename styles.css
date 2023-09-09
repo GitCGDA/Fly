@@ -66,8 +66,10 @@ nav a {
 /* Style for the slide container */
 .slide-container {
     position: relative;
-    width: 400px; /* Adjust the width as per your needs */
-    height: 300px; /* Adjust the height as per your needs */
+    width: 100%; /* Use 100% width for mobile screens */
+    max-width: 400px; /* Set a max-width to maintain readability on larger screens */
+    margin: 0 auto; /* Center the container */
+    height: auto; /* Allow the container to adjust its height based on content */
     overflow: hidden;
   }
   
@@ -75,17 +77,19 @@ nav a {
   .slide {
     display: none;
     width: 100%;
-    height: 100%;
-    position: absolute;
+    height: auto; /* Allow the slide to adjust its height based on content */
+    position: relative;
     transition: opacity 0.5s;
-    display: flex; /* Add this to enable side-by-side alignment */
-    align-items: center; /* Vertically center the content */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically on small screens */
   }
   
-  /* Style for the slide text and image */
-  .slide-text,
-  .slide-image {
-    flex: 1; /* Allow equal distribution of space */
+  /* Style for the slide content (image and text) */
+  .slide-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
   }
   
   /* Style for the slide text */
@@ -99,8 +103,8 @@ nav a {
   
   /* Style for the slide image */
   .slide-image {
-    max-width: 50%; /* Adjust as needed to fit the container */
-    max-height: 100%; /* Maintain the aspect ratio */
+    max-width: 100%; /* Adjust as needed to fit the container */
+    height: auto; /* Allow the image to adjust its height based on its aspect ratio */
   }
   
   /* Style for navigation buttons */
@@ -121,6 +125,13 @@ nav a {
   
   .next {
     right: 0;
+  }
+  
+  /* Media query for screens smaller than 768px (adjust as needed) */
+  @media (max-width: 768px) {
+    .slide-container {
+      max-width: 100%; /* Use full width for small screens */
+    }
   }
 
 
