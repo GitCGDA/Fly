@@ -64,13 +64,13 @@ nav a {
 
 
   /* Style for the slide container */
-  .slide-container {
+.slide-container {
     position: relative;
     width: 400px; /* Adjust the width as per your needs */
     height: 300px; /* Adjust the height as per your needs */
     overflow: hidden;
   }
-
+  
   /* Style for the slides */
   .slide {
     display: none;
@@ -80,13 +80,13 @@ nav a {
     position: absolute;
     transition: opacity 0.5s;
   }
-
+  
   /* Style for text and image within each slide */
   .slide img {
     max-width: 100%;
     max-height: 100%;
   }
-
+  
   /* Style for navigation buttons */
   .prev, .next {
     position: absolute;
@@ -98,15 +98,14 @@ nav a {
     color: #fff;
     font-size: 18px;
   }
-
+  
   .prev {
     left: 0;
   }
-
+  
   .next {
     right: 0;
   }
-
 
 
 
