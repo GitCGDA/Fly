@@ -76,36 +76,21 @@ h2 {
 
 
 
-/* Styles for the container */
+/* Add some basic styles to the container */
 .container {
-    display: flex;
-    align-items: center; /* Vertical alignment */
-    justify-content: center; /* Horizontal alignment */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Vertically center items */
 }
 
-/* Styles for the image */
+/* Style for the image */
 .image {
-    flex: 1; /* Take up 50% of the container */
-    padding: 20px;
+    max-width: 100%; /* Set the maximum width to 100% of the container */
+    height: auto; /* Maintain aspect ratio */
 }
 
-.image img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Styles for the text */
+/* Style for the text */
 .text {
-    flex: 1; /* Take up 50% of the container */
-    padding: 20px;
-}
-
-.text h2 {
-    font-size: 24px;
-}
-
-.text p {
-    font-size: 16px;
+    margin-left: 20px; /* Add some space between image and text */
 }
 
 
