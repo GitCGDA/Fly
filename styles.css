@@ -63,36 +63,36 @@ nav a {
 
 
 
-/* Styles for the slider container */
-.slider-container {
-    width: 100%;
-    max-width: 600px;
-    overflow: hidden;
-    position: relative;
+/* Styles for the container */
+.container {
+    display: flex;
+    align-items: center; /* Vertical alignment */
+    justify-content: center; /* Horizontal alignment */
 }
 
-/* Styles for individual slides */
-.slide {
-    display: none;
-    width: 100%;
-    text-align: center;
+/* Styles for the image */
+.image {
+    flex: 1; /* Take up 50% of the container */
+    padding: 20px;
 }
 
-/* Styles for images in slides */
-.slide img {
-    width: 100%;
+.image img {
+    max-width: 100%;
     height: auto;
 }
 
-/* Styles for text in slides */
-.slide .slide-text {
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    padding: 10px;
+/* Styles for the text */
+.text {
+    flex: 1; /* Take up 50% of the container */
+    padding: 20px;
+}
+
+.text h2 {
+    font-size: 24px;
+}
+
+.text p {
+    font-size: 16px;
 }
 
 
