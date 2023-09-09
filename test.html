@@ -13,25 +13,27 @@
         }
 
         .container {
-            width: 600px; /* Set the width of the container */
+            width: 800px; /* Set the width of the container to 800px */
             display: flex;
             align-items: center;
         }
 
         .text-box {
-            flex: 1; /* Make the text box take up available space */
+            flex: 3; /* Make the text box take up 3 times the available space */
             padding: 20px; /* Add some padding for spacing */
         }
 
         .image {
-            width: 70%; /* Set the width of the image */
-            margin-left: 20px; /* Adjust as needed to create spacing between text and image */
+            flex: 7; /* Make the image take up 7 times the available space (70%) */
+            max-width: 100%; /* Ensure the image doesn't exceed its container */
+            margin-right: 20px; /* Adjust as needed to create spacing between text and image */
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="text-box">
+            <h2>Header Goes Here</h2>
             <p>Your text goes here.</p>
         </div>
         <img src="images/Shin.jpeg" alt="Image description" class="image">
