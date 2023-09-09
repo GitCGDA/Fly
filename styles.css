@@ -82,12 +82,10 @@ nav a {
     align-items: center; /* Vertically center the content */
   }
   
-  /* Style for the slide content (image and text) */
-  .slide-content {
-    flex: 1; /* Allow the content to expand to fill available space */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  /* Style for the slide text and image */
+  .slide-text,
+  .slide-image {
+    flex: 1; /* Allow equal distribution of space */
   }
   
   /* Style for the slide text */
