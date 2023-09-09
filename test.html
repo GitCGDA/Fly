@@ -5,28 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         .container {
+            width: 400px; /* Set the width of the container */
+            height: 300px; /* Set the height of the container */
             display: flex;
             align-items: center;
         }
 
         .image {
-            flex: 1;
+            max-width: 50%; /* Set the maximum width of the image */
             margin-right: 20px; /* Adjust as needed to create spacing between image and text */
         }
 
         .text-box {
-            flex: 2; /* Adjust as needed to control the width of the text box */
+            flex: 1;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="images/Shin.jpeg" alt="Image description" class="image">
+        <img src="your-image.jpg" alt="Image description" class="image">
         <div class="text-box">
             <p>Your text goes here.</p>
         </div>
     </div>
 </body>
 </html>
-
 
