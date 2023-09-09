@@ -79,7 +79,7 @@ h2 {
 
 /* Add some basic styles to the container */
 .container {
-    width: 300px; /* Set the desired width */
+    width: 400px; /* Set the desired width */
     display: flex; /* Use flexbox for layout */
     align-items: center; /* Vertically center items */
 }
