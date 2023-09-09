@@ -101,31 +101,26 @@ nav a {
 
 .card-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    flex-wrap: wrap; /* Allows cards to wrap to the next row on smaller screens */
+    justify-content: space-between; /* Distribute space evenly between cards */
+    max-width: 1200px; /* Optional: Set a maximum width for the container */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px; /* Optional: Add some spacing around the cards */
 }
 
 .card {
-    width: calc(33.33% - 20px); /* Adjust card width for desktop screens */
-    max-width: 300px; /* Limit the maximum width for large screens */
+    flex: 0 1 calc(33.33% - 20px); /* Adjust the width of the card based on the desired number of cards per row */
     background-color: #fff;
     border: 1px solid #e0e0e0;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
+    margin-bottom: 20px; /* Optional: Add spacing between cards */
+    padding: 20px; /* Optional: Add spacing inside the cards */
 }
 
 .card img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
-    max-height: 200px; /* Adjust the maximum image height for smaller screens */
-    object-fit: cover;
 }
 
 .card h2 {
@@ -136,17 +131,6 @@ nav a {
 .card p {
     font-size: 14px;
     color: #666;
-}
-
-@media (max-width: 768px) {
-    .card {
-        width: 100%; /* Adjust card width for smaller screens (full width) */
-        max-width: none; /* Remove maximum width */
-    }
-
-    .card img {
-        max-height: none; /* Remove maximum image height for smaller screens */
-    }
 }
 
 
