@@ -103,9 +103,40 @@ nav a {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 100%; /* Ensure the container takes the full width of the viewport */
+    width: 300px; /* Set a fixed width for all card containers */
+    height: 400px; /* Set a fixed height for all card containers */
+    margin: 0 auto; /* Center the container horizontally */
     padding: 20px;
+}
+
+.card {
+    width: calc(33.33% - 20px);
+    max-width: 100%; /* Allow cards to take the full width of the container */
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card img {
+    width: 100%; /* Set a fixed width for all images */
+    height: 200px; /* Set a fixed height for all images */
+    object-fit: cover;
+}
+
+.card h2 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.card p {
+    font-size: 14px;
+    color: #666;
 }
 
 .card {
