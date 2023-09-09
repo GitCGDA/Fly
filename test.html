@@ -13,26 +13,52 @@
         }
 
         .container {
-            width: 800px; /* Set the width of the container to 800px */
+            max-width: 800px; /* Set the maximum width of the container */
+            width: 100%; /* Ensure it takes up the full available width */
             display: flex;
-            align-items: center;
+            flex-wrap: wrap; /* Allow items to wrap on smaller screens */
         }
 
         .text-box {
-            flex: 7; /* Make the text box take up 7 times the available space (70%) */
+            flex: 1; /* Make the text box take up 100% of the available width on small screens */
             padding: 20px; /* Add some padding for spacing */
         }
 
         .image {
-            flex: 3; /* Make the image take up 3 times the available space (30%) */
-            max-width: 50%; /* Ensure the image doesn't exceed its container */
-            margin-right: 20px; /* Adjust as needed to create spacing between text and image */
+            flex: 1; /* Make the image take up 100% of the available width on small screens */
+            max-width: 100%; /* Ensure the image doesn't exceed its container */
+            margin-top: 20px; /* Add some spacing between text and image */
         }
 
-        /* Adjust font size and line height for readability */
+        /* Adjust font size and line height for readability on small screens */
         .text-box p {
             font-size: 16px; /* Adjust font size as needed */
             line-height: 1.5; /* Adjust line height for readability */
+        }
+
+        /* Media query for screens smaller than 600px */
+        @media (max-width: 600px) {
+            .text-box, .image {
+                flex: 1; /* Make both text box and image take up 100% of the available width */
+                margin: 0; /* Remove margin between text and image */
+            }
+
+            .text-box {
+                padding: 10px; /* Adjust padding for smaller screens */
+            }
+
+            .image {
+                margin-top: 10px; /* Adjust spacing between text and image */
+            }
+
+            /* Adjust font size and line height for readability on smaller screens */
+            .text-box h2 {
+                font-size: 18px; /* Adjust font size as needed */
+            }
+
+            .text-box p {
+                font-size: 14px; /* Adjust font size as needed */
+            }
         }
     </style>
 </head>
