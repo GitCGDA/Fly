@@ -76,14 +76,6 @@ h2 {
 
 
 
-/* Add styles to center the container */
-body {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    height: 100vh; /* Make the body cover the entire viewport height */
-    margin: 0; /* Remove default margin */
-}
 
 /* Add some basic styles to the container */
 .container {
