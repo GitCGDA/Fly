@@ -15,16 +15,16 @@
         .container {
             width: 600px; /* Set the width of the container to 600px */
             display: flex;
-            align-items: center;
+            align-items: flex-start; /* Align content at the top within the container */
         }
 
         .text-box {
-            flex: 3; /* Make the text box take up 3 times the available space */
+            flex: 4; /* Make the text box take up 4 times the available space (40%) */
             padding: 20px; /* Add some padding for spacing */
         }
 
         .image {
-            flex: 7; /* Make the image take up 7 times the available space (70%) */
+            flex: 6; /* Make the image take up 6 times the available space (60%) */
             max-width: 100%; /* Ensure the image doesn't exceed its container */
             margin-right: 20px; /* Adjust as needed to create spacing between text and image */
         }
