@@ -1,26 +1,24 @@
-// JavaScript can remain the same as in the previous example
 let slideIndex = 0;
-showSlide(slideIndex);
 
-function changeSlide(n) {
-    showSlide((slideIndex += n));
-}
+function showSlides() {
+    const slides = document.querySelectorAll('.slide');
+    const indicators = document.querySelectorAll('.indicator');
 
-function showSlide(n) {
-    const slides = document.querySelectorAll(".slide");
-    if (n >= slides.length) {
-        slideIndex = 0;
-    }
-    if (n < 0) {
-        slideIndex = slides.length - 1;
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = 'none';
+        indicators[i].classList.remove('active');
     }
 
-    document.querySelectorAll(".slider").forEach((slider) => {
-        slider.style.transform = `translateX(-${slideIndex * 100}%)`;
-    });
+    slideIndex++;
+
+    if (slideIndex > slides.length) {
+        slideIndex = 1;
+    }
+
+    slides[slideIndex - 1].style.display = 'block';
+    indicators[slideIndex - 1].classList.add('active');
+
+    setTimeout(showSlides, 2000); // Change slide every 2 seconds
 }
 
-// Automatic slide change every 3 seconds
-setInterval(() => {
-    changeSlide(1);
-}, 3000);
+showSlides();
