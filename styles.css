@@ -63,36 +63,43 @@ nav a {
 
 
 
-/* Styles for the container */
-.container {
+.card-container {
     display: flex;
-    align-items: center; /* Vertical alignment */
-    justify-content: center; /* Horizontal alignment */
-}
-
-/* Styles for the image */
-.image {
-    flex: 1; /* Take up 50% of the container */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
 }
 
-.image img {
+.card {
+    width: 300px;
+    height: 400px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card img {
     max-width: 100%;
-    height: auto;
+    max-height: 100%; /* Add this line to ensure the image doesn't overflow the card */
+    width: auto; /* Maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
 }
 
-/* Styles for the text */
-.text {
-    flex: 1; /* Take up 50% of the container */
-    padding: 20px;
+.card h2 {
+    font-size: 18px;
+    margin: 10px 0;
 }
 
-.text h2 {
-    font-size: 24px;
-}
-
-.text p {
-    font-size: 16px;
+.card p {
+    font-size: 14px;
+    color: #666;
 }
 
 
