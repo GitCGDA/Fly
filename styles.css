@@ -80,12 +80,18 @@ nav a {
     transition: opacity 0.5s;
     display: flex; /* Add this to enable side-by-side alignment */
     align-items: center; /* Vertically center the content */
-    justify-content: space-between; /* Create space between image and text */
+  }
+  
+  /* Style for the slide content (image and text) */
+  .slide-content {
+    flex: 1; /* Allow the content to expand to fill available space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   
   /* Style for the slide text */
   .slide-text {
-    flex: 1; /* Allow the text to expand to fill available space */
     text-align: center;
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.5);
