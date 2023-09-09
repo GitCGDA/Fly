@@ -105,7 +105,7 @@ nav a {
     justify-content: space-between;
     max-width: 100%; /* Ensure the container takes the full width of the viewport */
     width: 300px; /* Set a fixed width for all card containers */
-    height: 500px; /* Set a fixed height for all card containers */
+    height: 400px; /* Set a fixed height for all card containers */
     margin: 0 auto; /* Center the container horizontally */
     padding: 20px;
 }
