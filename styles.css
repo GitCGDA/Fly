@@ -97,7 +97,7 @@ h2 {
     padding: 20px; /* Add some padding for spacing */
 }
 
-.image {
+.container img {
     flex: 3; /* Make the image take up 3 times the available space (30%) */
     max-width: 50%; /* Ensure the image doesn't exceed its container */
     margin-right: 20px; /* Adjust as needed to create spacing between text and image */
