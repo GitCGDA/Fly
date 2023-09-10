@@ -85,8 +85,49 @@ h2 {
 
 
 
+.slide {
+    width: 1000px; /* Set the width of the container to 800px */
+    display: flex;
+    align-items: center;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
 
 
+.text-box {
+    flex: 7; /* Make the text box take up 7 times the available space (70%) */
+    padding: 20px; /* Add some padding for spacing */
+}
+
+.slide img {
+    flex: 3; /* Make the image take up 3 times the available space (30%) */
+    max-width: 50%; /* Ensure the image doesn't exceed its container */
+    margin-right: 20px; /* Adjust as needed to create spacing between text and image */
+}
+
+/* Adjust font size and line height for readability */
+.text-box p {
+    font-size: 16px; /* Adjust font size as needed */
+    line-height: 1.5; /* Adjust line height for readability */
+}
+
+.slider-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.control-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+}
 
 
 
