@@ -3,96 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bridgewater Associates Slider</title>
     <style>
-        /* CSS styles go here */
         body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
         }
 
-        .slider {
-            width: 600px; /* Set the desired width of the slider */
-            height: 400px; /* Set the desired height of the slider */
+        .slide-container {
+            width: 100%;
             overflow: hidden;
             position: relative;
         }
 
         .slide {
-            float: left;
+            display: none;
+        }
+
+        .slide img {
             width: 100%;
-            display: flex; /* Use flexbox for layout */
-            position: relative;
-            height: 100%; /* Ensure slides occupy full height of the slider */
+            height: auto;
         }
 
-        img {
-            flex: 1; /* Make the image fill the available space */
-            height: 100%;
-            object-fit: cover; /* Maintain aspect ratio and cover entire slide */
-        }
-
-        .slide-content {
-            flex: 1; /* Make the content fill the available space */
-            text-align: left;
-            padding: 20px; /* Add padding for spacing */
-            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-            color: #fff;
-            box-sizing: border-box; /* Include padding in width calculations */
-        }
-
-        .slide-nav {
+        .caption {
             position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .prev-btn,
-        .next-btn {
-            background-color: #007BFF;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.5);
             color: #fff;
-            padding: 10px 20px;
-            margin: 0 10px;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
+            padding: 5px;
+            text-align: center;
         }
     </style>
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                if (i === index) {
+                    slide.style.display = 'block';
+                } else {
+                    slide.style.display = 'none';
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function previousSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        showSlide(currentSlide);
+
+        setInterval(nextSlide, 5000); // Automatically advance to the next slide every 5 seconds
+    </script>
+    <title>Slide Container</title>
 </head>
 <body>
-    <div class="slider">
+    <div class="slide-container">
         <div class="slide">
             <img src="images/J.jpeg" alt="Slide 1">
-            <div class="slide-content">
-                <h1>Slide 1</h1>
-                <p>Some text content for Slide 1.</p>
-            </div>
+            <div class="caption">Caption for Slide 1</div>
         </div>
         <div class="slide">
-            <img src="images/Shin.jpeg" alt="Slide 2">
-            <div class="slide-content">
-                <h1>Slide 2</h1>
-                <p>Some text content for Slide 2.</p>
-            </div>
+            <img src="images/Ted.jpeg" alt="Slide 2">
+            <div class="caption">Caption for Slide 2</div>
         </div>
         <div class="slide">
-            <img src="images/Ted.jpeg" alt="Slide 3">
-            <div class="slide-content">
-                <h1>Slide 3</h1>
-                <p>Some text content for Slide 3.</p>
-            </div>
-        </div>
-
-        <div class="slide-nav">
-            <button class="prev-btn" onclick="prevSlide()">Previous</button>
-            <button class="next-btn" onclick="nextSlide()">Next</button>
+            <img src="images/Shin.jpeg" alt="Slide 3">
+            <div class="caption">Caption for Slide 3</div>
         </div>
     </div>
-
-    <script>
-        // JavaScript code goes here (same as previous example)
-    </script>
 </body>
 </html>
