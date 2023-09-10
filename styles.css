@@ -213,6 +213,20 @@ footer {
         display: block;
         padding: 1rem 0;
     }
+
+    {
+        .text-box {
+            padding: 10px;
+        }
+
+        .container img {
+            margin-top: 10px;
+        }
+
+
+
+
+
 }
 
 
