@@ -46,9 +46,10 @@
         }
 
         .button-container {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
+            position: relative; /* Change to relative positioning */
+            z-index: 1; /* Ensure buttons are displayed on top of the slides */
+            text-align: center; /* Center the buttons horizontally */
+            margin-top: -40px; /* Adjust the top margin as needed */
         }
 
         button {
