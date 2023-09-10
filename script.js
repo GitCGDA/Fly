@@ -13,7 +13,12 @@ function showSlide(n) {
     if (n < 0) {
         slideIndex = slides.length - 1;
     }
-    document.querySelector(".slides").style.transform = `translateX(-${slideIndex * 100}%)`;
+
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+
+    slides[slideIndex].style.display = "block";
 }
 
 // Automatic slide change every 3 seconds
