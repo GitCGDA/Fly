@@ -44,6 +44,30 @@
             flex: 0 0 45%; /* Adjust the width as needed */
             text-align: left;
         }
+
+        .button-container {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
+
+        button {
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+        }
+
+        .prev-slide {
+            order: 1; /* To move the button to the right */
+        }
+
+        .next-slide {
+            order: 2; /* To move the button to the right */
+        }
     </style>
     <title>Slide Container</title>
 </head>
@@ -55,17 +79,49 @@
                     <h2>Slide 1 Title</h2>
                     <p>Slide 1 content goes here.</p>
                 </div>
-                <img src="images/J.jpeg" alt="Slide 1">
+                <img src="images/Shin.jpeg" alt="Slide 1">
             </div>
             <div class="slide">
                 <div class="slide-content">
                     <h2>Slide 2 Title</h2>
                     <p>Slide 2 content goes here.</p>
                 </div>
-                <img src="images/Shin.jpeg" alt="Slide 2">
+                <img src="images/J.jpeg" alt="Slide 2">
             </div>
             <!-- Add more slides as needed -->
         </div>
+        <div class="button-container">
+            <button class="prev-slide">Previous</button>
+            <button class="next-slide">Next</button>
+        </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var slideIndex = 0;
+            var slides = $(".slide");
+            var totalSlides = slides.length;
+
+            function showSlide(index) {
+                slides.removeClass("active");
+                slides.eq(index).addClass("active");
+            }
+
+            function nextSlide() {
+                slideIndex = (slideIndex + 1) % totalSlides;
+                showSlide(slideIndex);
+            }
+
+            function prevSlide() {
+                slideIndex = (slideIndex - 1 + totalSlides) % totalSlides;
+                showSlide(slideIndex);
+            }
+
+            $(".next-slide").click(nextSlide);
+            $(".prev-slide").click(prevSlide);
+
+            showSlide(slideIndex);
+        });
+    </script>
 </body>
 </html>
