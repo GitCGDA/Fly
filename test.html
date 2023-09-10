@@ -23,6 +23,9 @@
 
         .slide {
             flex: 0 0 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             padding: 20px;
             text-align: center;
         }
@@ -30,6 +33,10 @@
         .slide img {
             max-width: 100%;
             height: auto;
+        }
+
+        h2, p {
+            margin: 10px 0;
         }
 
         button {
@@ -63,12 +70,12 @@
     <div class="slide-container">
         <div class="slides">
             <div class="slide">
-                <img src="images/J.jpeg" alt="Slide 1">
+                <img src="image1.jpg" alt="Slide 1">
                 <h2>Slide 1 Title</h2>
                 <p>Slide 1 content goes here.</p>
             </div>
             <div class="slide">
-                <img src="images/Shin.jpeg" alt="Slide 2">
+                <img src="image2.jpg" alt="Slide 2">
                 <h2>Slide 2 Title</h2>
                 <p>Slide 2 content goes here.</p>
             </div>
@@ -86,7 +93,7 @@
 
             function showSlide(index) {
                 slides.css("display", "none");
-                slides.eq(index).css("display", "block");
+                slides.eq(index).css("display", "flex");
             }
 
             function nextSlide() {
@@ -107,5 +114,3 @@
     </script>
 </body>
 </html>
-
-
