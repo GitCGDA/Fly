@@ -59,6 +59,12 @@
         #nextBtn {
             float: right;
         }
+
+        /* Adjust the position of the navigation buttons */
+        .navigation {
+            margin-top: 20px; /* You can adjust the margin to control the vertical positioning */
+            text-align: center; /* Center the navigation buttons horizontally */
+        }
     </style>
 </head>
 <body>
@@ -66,19 +72,21 @@
         <div class="slider">
             <div class="slide">
                 <p class="slide-text">Text for Image 1</p>
-                <img src="images/J.jpeg" alt="Image 1">
+                <img src="image1.jpg" alt="Image 1">
             </div>
             <div class="slide">
                 <p class="slide-text">Text for Image 2</p>
-                <img src="images/Ted.jpeg" alt="Image 2">
+                <img src="image2.jpg" alt="Image 2">
             </div>
             <div class="slide">
                 <p class="slide-text">Text for Image 3</p>
-                <img src="images/Shin.jpeg" alt="Image 3">
+                <img src="image3.jpg" alt="Image 3">
             </div>
-            <button id="prevBtn">Previous</button>
-            <button id="nextBtn">Next</button>
         </div>
+    </div>
+    <div class="navigation">
+        <button id="prevBtn">Previous</button>
+        <button id="nextBtn">Next</button>
     </div>
     <script>
         const slider = document.querySelector('.slider');
