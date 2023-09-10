@@ -14,11 +14,13 @@
             width: 100%;
             max-width: 800px;
             margin: 0 auto;
+            height: 300px; /* Set the fixed height for the slide container */
         }
 
         .slides {
             display: flex;
             transition: transform 0.5s ease-in-out;
+            height: 100%; /* Ensure all slides take the full height of the container */
         }
 
         .slide {
@@ -28,6 +30,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px;
+            height: 100%; /* Ensure each slide takes the full height of the container */
         }
 
         .slide img {
@@ -79,14 +82,14 @@
                     <h2>Slide 1 Title</h2>
                     <p>Slide 1 content goes here.</p>
                 </div>
-                <img src="images/J.jpeg" alt="Slide 1">
+                <img src="image1.jpg" alt="Slide 1">
             </div>
             <div class="slide">
                 <div class="slide-content">
                     <h2>Slide 2 Title</h2>
                     <p>Slide 2 content goes here.</p>
                 </div>
-                <img src="images/Shin.jpeg" alt="Slide 2">
+                <img src="image2.jpg" alt="Slide 2">
             </div>
             <!-- Add more slides as needed -->
         </div>
