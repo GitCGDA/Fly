@@ -36,12 +36,12 @@
         }
 
         .slide img {
-            max-width: 50%; /* Adjust the width as needed */
+            max-width: 60%; /* Increase the image width to 60% of the slide width */
             height: 300px; /* Set the fixed height for the images */
         }
 
         .slide-content {
-            flex: 0 0 45%; /* Adjust the width as needed */
+            flex: 0 0 35%; /* Adjust the width as needed */
             text-align: left;
         }
 
@@ -86,6 +86,54 @@
                     <h2>Slide 1 Title</h2>
                     <p>Slide 1 content goes here.</p>
                 </div>
+                <img src="image1.jpg" alt="Slide 1">
+            </div>
+            <div class="slide">
+                <div class="slide-content">
+                    <h2>Slide 2 Title</h2>
+                    <p>Slide 2 content goes here.</p>
+                </div>
+                <img src="image2.jpg" alt="Slide 2">
+            </div>
+            <!-- Add more slides as needed -->
+        </div>
+        <div class="button-container">
+            <button class="prev-slide">Previous</button>
+            <button class="next-slide">Next</button>
+        </div>
+    </div>
+</body>
+</html>
+In this code, I increased the max-width of the images within the .slide img class to 60%, which will make the images take up 60% of the slide's width. You can adjust this value further if needed.
+
+
+
+User
+include the java script into the file 
+
+ChatGPT
+Certainly, you can include the JavaScript code directly within your HTML file. Here's your modified HTML file with the JavaScript code embedded:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Your CSS styles here */
+    </style>
+    <title>Slide Container</title>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="slides">
+            <div class="slide active">
+                <div class="slide-content">
+                    <h2>Slide 1 Title</h2>
+                    <p>Slide 1 content goes here.</p>
+                </div>
                 <img src="images/Shin.jpeg" alt="Slide 1">
             </div>
             <div class="slide">
@@ -102,16 +150,18 @@
             <button class="next-slide">Next</button>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <script>
-        $(document).ready(function() {
+        document.addEventListener('DOMContentLoaded', function() {
             var slideIndex = 0;
-            var slides = $(".slide");
+            var slides = document.querySelectorAll('.slide');
             var totalSlides = slides.length;
 
             function showSlide(index) {
-                slides.removeClass("active");
-                slides.eq(index).addClass("active");
+                slides.forEach(function(slide) {
+                    slide.classList.remove('active');
+                });
+                slides[index].classList.add('active');
             }
 
             function nextSlide() {
@@ -124,8 +174,8 @@
                 showSlide(slideIndex);
             }
 
-            $(".next-slide").click(nextSlide);
-            $(".prev-slide").click(prevSlide);
+            document.querySelector('.next-slide').addEventListener('click', nextSlide);
+            document.querySelector('.prev-slide').addEventListener('click', prevSlide);
 
             showSlide(slideIndex);
         });
