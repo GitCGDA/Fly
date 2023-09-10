@@ -13,7 +13,8 @@
         }
 
         .slider {
-            width: 100%;
+            width: 600px; /* Set the desired width of the slider */
+            height: 400px; /* Set the desired height of the slider */
             overflow: hidden;
             position: relative;
         }
@@ -23,11 +24,13 @@
             width: 100%;
             display: none;
             position: relative;
+            height: 100%; /* Ensure slides occupy full height of the slider */
         }
 
         img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover; /* Maintain aspect ratio and cover entire slide */
         }
 
         .slide-content {
@@ -75,7 +78,7 @@
             </div>
         </div>
         <div class="slide">
-            <img src="slide3.jpg" alt="Slide 3">
+            <img src="images/Ted.jpeg" alt="Slide 3">
             <div class="slide-content">
                 <h1>Slide 3</h1>
                 <p>Some text content for Slide 3.</p>
