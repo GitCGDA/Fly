@@ -3,126 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image and Text Slider</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-
+        /* Basic styling for the slider container */
         .slider-container {
-            text-align: center;
             position: relative;
-            margin: 0 auto; /* Center the container horizontally */
-            width: 600px; /* Set the width of the container */
-            height: 400px; /* Set the height of the container */
             overflow: hidden;
+            width: 300px; /* Adjust the width as needed */
+            margin: 0 auto;
         }
 
+        /* Styling for individual slides */
+        .slide {
+            width: 100%;
+            height: 300px; /* Adjust the height as needed */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ccc; /* Background color for the slides */
+            font-size: 24px;
+        }
+
+        /* Hide overflow to create a "viewport" for the slides */
         .slider {
             display: flex;
-            flex-direction: column; /* Display images and text vertically */
-            align-items: center; /* Center content horizontally */
             overflow: hidden;
-            max-width: 100%;
         }
 
-        .slide {
-            display: flex;
-            justify-content: space-between; /* Align text to the left and image to the right */
-            align-items: center;
-            padding: 10px;
-            margin: 10px;
-        }
-
-        .slide img {
-            max-width: 60%; /* Adjust the image width to 60% of its container */
-            height: auto; /* Allow the image to adjust its height to maintain the aspect ratio */
-            object-fit: contain; /* Maintain the image's aspect ratio */
-        }
-
-        .slide-text {
-            flex: 1; /* Allow text to expand to the available space */
-            margin-left: 10px; /* Add some margin to separate text from image */
-            text-align: left; /* Align text to the left */
-        }
-
-        button {
-            margin-top: 10px;
+        /* Styling for navigation buttons */
+        .prev-button,
+        .next-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
             padding: 10px 20px;
-            font-size: 16px;
+            background-color: #007bff; /* Button background color */
+            color: #fff; /* Button text color */
+            border: none;
+            cursor: pointer;
         }
 
-        #prevBtn {
-            float: left;
-        }
-
-        #nextBtn {
-            float: right;
-        }
-
-        /* Adjust the position of the navigation buttons */
-        .navigation {
-            margin-top: 20px; /* You can adjust the margin to control the vertical positioning */
-            text-align: center; /* Center the navigation buttons horizontally */
+        .next-button {
+            right: 0;
         }
     </style>
+    <title>Slide Container with Navigation</title>
 </head>
 <body>
     <div class="slider-container">
         <div class="slider">
-            <div class="slide">
-                <p class="slide-text">Text for Image 1</p>
-                <img src="image1.jpg" alt="Image 1">
-            </div>
-            <div class="slide">
-                <p class="slide-text">Text for Image 2</p>
-                <img src="image2.jpg" alt="Image 2">
-            </div>
-            <div class="slide">
-                <p class="slide-text">Text for Image 3</p>
-                <img src="image3.jpg" alt="Image 3">
-            </div>
+            <div class="images/jpeg">Slide 1</div>
+            <div class="imafef">Slide 2</div>
+            <div class="slide">Slide 3</div>
         </div>
-    </div>
-    <div class="navigation">
-        <button id="prevBtn">Previous</button>
-        <button id="nextBtn">Next</button>
+        <button class="prev-button">Previous</button>
+        <button class="next-button">Next</button>
     </div>
     <script>
-        const slider = document.querySelector('.slider');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
+        const slider = document.querySelector(".slider");
+        const slides = document.querySelectorAll(".slide");
+        const prevButton = document.querySelector(".prev-button");
+        const nextButton = document.querySelector(".next-button");
 
-        let slideIndex = 0;
+        let currentIndex = 0;
 
         function showSlide(index) {
-            const slides = document.querySelectorAll('.slide');
-            if (index >= slides.length) {
-                slideIndex = 0;
-            }
-            if (index < 0) {
-                slideIndex = slides.length - 1;
-            }
             slides.forEach((slide, i) => {
-                if (i === slideIndex) {
-                    slide.style.display = 'flex';
-                } else {
-                    slide.style.display = 'none';
-                }
+                slide.style.transform = `translateX(${100 * (i - index)}%)`;
             });
         }
 
-        prevBtn.addEventListener('click', () => {
-            slideIndex--;
-            showSlide(slideIndex);
-        });
+        function goToPrevSlide() {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            showSlide(currentIndex);
+        }
 
-        nextBtn.addEventListener('click', () => {
-            slideIndex++;
-            showSlide(slideIndex);
-        });
+        function goToNextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            showSlide(currentIndex);
+        }
 
-        showSlide(slideIndex);
+        prevButton.addEventListener("click", goToPrevSlide);
+        nextButton.addEventListener("click", goToNextSlide);
     </script>
 </body>
 </html>
