@@ -19,7 +19,7 @@
 
         .slides {
             display: flex;
-            transition: transform 0.5s ease-in-out;
+            transition: opacity 0.5s ease-in-out;
             height: 100%; /* Ensure all slides take the full height of the container */
         }
 
@@ -31,31 +31,32 @@
             align-items: center;
             padding: 20px;
             height: 100%; /* Ensure each slide takes the full height of the container */
+            opacity: 0; /* Start with 0 opacity to create a fade effect */
+            position: relative; /* Required for positioning buttons */
+        }
+
+        .slide.active {
+            opacity: 1; /* Active slide with full opacity */
         }
 
         .slide img {
-            max-width: 70%; /* Adjust the width as needed */
-            height: 300px; /* Set the fixed height for the images */
+            max-width: 50%; /* Adjust the width as needed */
+            height: 100%; /* Match the height of the container */
         }
 
         .slide-content {
-            flex: 0 0 30%; /* Adjust the width as needed */
+            flex: 0 0 45%; /* Adjust the width as needed */
             text-align: left;
         }
 
-        h2, p {
-            margin: 10px 0;
+        .button-container {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
         }
 
         button {
             cursor: pointer;
-        }
-
-        .prev-slide,
-        .next-slide {
-            position: absolute;
-            top: 20%;
-            transform: translateY(-50%);
             background: rgba(0, 0, 0, 0.5);
             color: white;
             border: none;
@@ -65,11 +66,11 @@
         }
 
         .prev-slide {
-            left: 0;
+            order: 1; /* To move the button to the right */
         }
 
         .next-slide {
-            right: 0;
+            order: 2; /* To move the button to the right */
         }
     </style>
     <title>Slide Container</title>
@@ -77,10 +78,14 @@
 <body>
     <div class="slide-container">
         <div class="slides">
-            <div class="slide">
+            <div class="slide active">
                 <div class="slide-content">
                     <h2>Slide 1 Title</h2>
                     <p>Slide 1 content goes here.</p>
+                </div>
+                <div class="button-container">
+                    <button class="prev-slide">Previous</button>
+                    <button class="next-slide">Next</button>
                 </div>
                 <img src="images/J.jpeg" alt="Slide 1">
             </div>
@@ -89,12 +94,14 @@
                     <h2>Slide 2 Title</h2>
                     <p>Slide 2 content goes here.</p>
                 </div>
+                <div class="button-container">
+                    <button class="prev-slide">Previous</button>
+                    <button class="next-slide">Next</button>
+                </div>
                 <img src="images/Shin.jpeg" alt="Slide 2">
             </div>
             <!-- Add more slides as needed -->
         </div>
-        <button class="prev-slide">Previous</button>
-        <button class="next-slide">Next</button>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
@@ -104,8 +111,8 @@
             var totalSlides = slides.length;
 
             function showSlide(index) {
-                slides.css("display", "none");
-                slides.eq(index).css("display", "flex");
+                slides.removeClass("active");
+                slides.eq(index).addClass("active");
             }
 
             function nextSlide() {
@@ -122,6 +129,11 @@
             $(".prev-slide").click(prevSlide);
 
             showSlide(slideIndex);
+
+            // Auto transition every 2 seconds
+            setInterval(function() {
+                nextSlide();
+            }, 2000);
         });
     </script>
 </body>
