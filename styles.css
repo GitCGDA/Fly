@@ -70,7 +70,16 @@ h2 {
   }
 
 
-
+  h3 {
+    text-align: left;
+    font-family: monospace /* Change the font family */
+      font-size: 36px; /* Change the font size */
+      font-weight: bold; /* Change the font weight (e.g., bold) */
+      font-style:; /* Change the font style (e.g., italic) */
+      color: #333; /* Change the text color */
+      text-decoration:; /* Add underline */
+      /* You can add more font properties as needed */
+  }
 
 
 
