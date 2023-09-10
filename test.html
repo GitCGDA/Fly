@@ -24,15 +24,20 @@
         .slide {
             flex: 0 0 100%;
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
+            justify-content: space-between;
             align-items: center;
             padding: 20px;
-            text-align: center;
         }
 
         .slide img {
-            max-width: 100%;
+            max-width: 50%; /* Adjust the width as needed */
             height: auto;
+        }
+
+        .slide-content {
+            flex: 0 0 45%; /* Adjust the width as needed */
+            text-align: left;
         }
 
         h2, p {
@@ -70,14 +75,18 @@
     <div class="slide-container">
         <div class="slides">
             <div class="slide">
+                <div class="slide-content">
+                    <h2>Slide 1 Title</h2>
+                    <p>Slide 1 content goes here.</p>
+                </div>
                 <img src="images/J.jpeg" alt="Slide 1">
-                <h2>Slide 1 Title</h2>
-                <p>Slide 1 content goes here.</p>
             </div>
             <div class="slide">
+                <div class="slide-content">
+                    <h2>Slide 2 Title</h2>
+                    <p>Slide 2 content goes here.</p>
+                </div>
                 <img src="images/Shin.jpeg" alt="Slide 2">
-                <h2>Slide 2 Title</h2>
-                <p>Slide 2 content goes here.</p>
             </div>
             <!-- Add more slides as needed -->
         </div>
