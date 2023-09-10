@@ -3,6 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .slide-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            flex: 0 0 100%;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .slide img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .prev-slide,
+        .next-slide {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+        }
+
+        .prev-slide {
+            left: 0;
+        }
+
+        .next-slide {
+            right: 0;
+        }
+    </style>
     <title>Slide Container</title>
 </head>
 <body>
@@ -24,93 +78,34 @@
         <button class="next-slide">Next</button>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var slideIndex = 0;
+            var slides = $(".slide");
+            var totalSlides = slides.length;
+
+            function showSlide(index) {
+                slides.css("display", "none");
+                slides.eq(index).css("display", "block");
+            }
+
+            function nextSlide() {
+                slideIndex = (slideIndex + 1) % totalSlides;
+                showSlide(slideIndex);
+            }
+
+            function prevSlide() {
+                slideIndex = (slideIndex - 1 + totalSlides) % totalSlides;
+                showSlide(slideIndex);
+            }
+
+            $(".next-slide").click(nextSlide);
+            $(".prev-slide").click(prevSlide);
+
+            showSlide(slideIndex);
+        });
+    </script>
 </body>
 </html>
-
-body {
-    font-family: Arial, sans-serif;
-}
-
-.slide-container {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.slides {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.slide {
-    flex: 0 0 100%;
-    padding: 20px;
-    text-align: center;
-}
-
-.slide img {
-    max-width: 100%;
-    height: auto;
-}
-
-button {
-    cursor: pointer;
-}
-
-.prev-slide,
-.next-slide {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin: 0 10px;
-    font-size: 16px;
-}
-
-.prev-slide {
-    left: 0;
-}
-
-.next-slide {
-    right: 0;
-}
-
-
-
-
-$(document).ready(function() {
-    var slideIndex = 0;
-    var slides = $(".slide");
-    var totalSlides = slides.length;
-
-    function showSlide(index) {
-        slides.css("display", "none");
-        slides.eq(index).css("display", "block");
-    }
-
-    function nextSlide() {
-        slideIndex = (slideIndex + 1) % totalSlides;
-        showSlide(slideIndex);
-    }
-
-    function prevSlide() {
-        slideIndex = (slideIndex - 1 + totalSlides) % totalSlides;
-        showSlide(slideIndex);
-    }
-
-    $(".next-slide").click(nextSlide);
-    $(".prev-slide").click(prevSlide);
-
-    showSlide(slideIndex);
-});
-
-
-
-
 
 
