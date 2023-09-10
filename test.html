@@ -19,7 +19,7 @@
 
         .slides {
             display: flex;
-            transition: opacity 0.5s ease-in-out;
+            /* Removed transition property for immediate switch */
             height: 100%; /* Ensure all slides take the full height of the container */
         }
 
@@ -31,12 +31,8 @@
             align-items: center;
             padding: 20px;
             height: 100%; /* Ensure each slide takes the full height of the container */
-            opacity: 0; /* Start with 0 opacity to create a fade effect */
+            /* Removed opacity and transition properties for fade effect */
             position: relative; /* Required for positioning buttons */
-        }
-
-        .slide.active {
-            opacity: 1; /* Active slide with full opacity */
         }
 
         .slide img {
@@ -87,7 +83,7 @@
                     <button class="prev-slide">Previous</button>
                     <button class="next-slide">Next</button>
                 </div>
-                <img src="images/J.jpeg" alt="Slide 1">
+                <img src="images/Shin.jpeg" alt="Slide 1">
             </div>
             <div class="slide">
                 <div class="slide-content">
@@ -98,7 +94,7 @@
                     <button class="prev-slide">Previous</button>
                     <button class="next-slide">Next</button>
                 </div>
-                <img src="images/Shin.jpeg" alt="Slide 2">
+                <img src="images/J.jpeg" alt="Slide 2">
             </div>
             <!-- Add more slides as needed -->
         </div>
