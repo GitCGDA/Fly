@@ -1,3 +1,4 @@
+// JavaScript can remain the same as in the previous example
 let slideIndex = 0;
 showSlide(slideIndex);
 
