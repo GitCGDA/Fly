@@ -3,87 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
     <style>
-        /* Basic styling for the slider container */
-        .slider-container {
-            position: relative;
-            overflow: hidden;
-            width: 300px; /* Adjust the width as needed */
-            margin: 0 auto;
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
         }
 
-        /* Styling for individual slides */
-        .slide {
+        .slider-container {
             width: 100%;
-            height: 300px; /* Adjust the height as needed */
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slider {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #ccc; /* Background color for the slides */
+            transition: transform 0.5s ease;
+        }
+
+        .slide {
+            flex: 0 0 100%;
+            max-width: 100%;
+            padding: 0;
+            text-align: center;
+        }
+
+        .slide img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .slide-content {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            padding: 20px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .slide h2 {
             font-size: 24px;
         }
 
-        /* Hide overflow to create a "viewport" for the slides */
-        .slider {
-            display: flex;
-            overflow: hidden;
-        }
-
-        /* Styling for navigation buttons */
-        .prev-button,
-        .next-button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            padding: 10px 20px;
-            background-color: #007bff; /* Button background color */
-            color: #fff; /* Button text color */
-            border: none;
-            cursor: pointer;
-        }
-
-        .next-button {
-            right: 0;
+        .slide p {
+            font-size: 16px;
         }
     </style>
-    <title>Slide Container with Navigation</title>
 </head>
 <body>
     <div class="slider-container">
         <div class="slider">
-            <div class="images/jpeg">Slide 1</div>
-            <div class="imafef">Slide 2</div>
-            <div class="slide">Slide 3</div>
+            <div class="slide">
+                <img src="images/J.jpeg" alt="Slide 1">
+                <div class="slide-content">
+                    <h2>Slide 1</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="images/Shin.jpeg" alt="Slide 2">
+                <div class="slide-content">
+                    <h2>Slide 2</h2>
+                    <p>Proin eget tortor risus.</p>
+                </div>
+            </div>
+            <!-- Add more slides as needed -->
         </div>
-        <button class="prev-button">Previous</button>
-        <button class="next-button">Next</button>
     </div>
     <script>
         const slider = document.querySelector(".slider");
-        const slides = document.querySelectorAll(".slide");
-        const prevButton = document.querySelector(".prev-button");
-        const nextButton = document.querySelector(".next-button");
-
-        let currentIndex = 0;
+        let slideIndex = 0;
 
         function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.style.transform = `translateX(${100 * (i - index)}%)`;
-            });
+            if (index < 0) {
+                slideIndex = slider.children.length - 1;
+            } else if (index >= slider.children.length) {
+                slideIndex = 0;
+            }
+
+            const translateX = -slideIndex * 100;
+            slider.style.transform = `translateX(${translateX}%)`;
         }
 
-        function goToPrevSlide() {
-            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-            showSlide(currentIndex);
-        }
+        setInterval(() => {
+            slideIndex++;
+            showSlide(slideIndex);
+        }, 5000);
 
-        function goToNextSlide() {
-            currentIndex = (currentIndex + 1) % slides.length;
-            showSlide(currentIndex);
-        }
-
-        prevButton.addEventListener("click", goToPrevSlide);
-        nextButton.addEventListener("click", goToNextSlide);
+        showSlide(slideIndex);
     </script>
 </body>
 </html>
