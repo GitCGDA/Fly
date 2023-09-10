@@ -1,27 +1,17 @@
-let currentSlide = 0;
-        const slides = document.querySelectorAll(".slide");
+// JavaScript for image slider
+let slideIndex = 0;
 
-        function showSlide(slideIndex) {
-            if (slideIndex < 0) {
-                currentSlide = slides.length - 1;
-            } else if (slideIndex >= slides.length) {
-                currentSlide = 0;
-            }
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slides[currentSlide].style.display = "block";
-        }
+function showSlides() {
+    const slides = document.querySelectorAll(".slider img");
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {
+        slideIndex = 1;
+    }
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
 
-        function prevSlide() {
-            showSlide(currentSlide - 1);
-        }
-
-        function nextSlide() {
-            showSlide(currentSlide + 1);
-        }
-
-        showSlide(currentSlide);
-    </script>
-</body>
-</html>
+showSlides();
