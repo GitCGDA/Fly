@@ -76,7 +76,7 @@ h2 {
   }
 
 .header-subtitle nav {
-    background-color: #1ab83a;
+    background-color: #ffffff;
     justify-content: center;
   }
 
@@ -92,7 +92,7 @@ h2 {
 .header-subtitle nav a {
     text-decoration: none;
     font-size: 18px;
-    color: #5d139d;
+    color: #666;
 }
 
 
