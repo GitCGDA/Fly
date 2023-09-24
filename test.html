@@ -1,37 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-  .header-container {
-    display: flex;
-    align-items: center;
-  }
+    <style>
+        /* Define styles for the body */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* This ensures the body takes up the full viewport height */
+            margin: 0;
+        }
 
-  .header-title {
-    margin-right: 20px; /* Adjust the margin as needed */
-  }
+        /* Define styles for the container */
+        .container {
+            width: 300px; /* Fixed width for the container */
+            height: 200px; /* Fixed height for the container */
+            border: 1px solid #ccc;
+            padding: 20px;
+            text-align: center;
+        }
 
-  /* Additional CSS styling for the title and header */
-  .header-title h1 {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-  }
+        /* Style the text box to take up 70% of the container width */
+        .text-box {
+            width: 70%;
+            padding: 10px;
+            margin: 0 auto;
+            display: block;
+        }
 
-  .header-subtitle {
-    font-size: 18px;
-    color: #666;
-  }
-</style>
+        /* Style the image */
+        .image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 <body>
-  <div class="header-container">
-    <div class="header-title">
-      <h1>Main Title</h1>
+    <div class="container">
+        <input type="text" class="text-box" placeholder="Enter text here">
+        <img src="https://via.placeholder.com/150" alt="Sample Image" class="image">
     </div>
-    <div class="header-subtitle">
-      <p>Subtitle or additional information goes here.</p>
-    </div>
-  </div>
 </body>
 </html>
