@@ -89,7 +89,7 @@ h2 {
   }
 
 .header-title {
-    margin-right: 40px; /* Adjust the margin as needed */
+    margin-right: 20px; /* Adjust the margin as needed */
   }
 
   /* Additional CSS styling for the title and header */
@@ -99,8 +99,8 @@ h2 {
     color: #333;
   }
 
-.header-subtitle {
-    font-size: 18px;
+.header-subtitle nav ul {
+    font-size: 28px;
     color: #666;
   }
 
