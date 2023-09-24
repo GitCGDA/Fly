@@ -110,6 +110,7 @@ h2 {
 
 .slider-container {
     align-items: center;
+    justify-content: center;
 }
 
 .slide {
