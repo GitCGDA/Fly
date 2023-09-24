@@ -83,23 +83,23 @@ h2 {
 
 
 
-  .header-container {
+.header-container {
     display: flex;
     align-items: center;
   }
 
-  .header-title {
+.header-title {
     margin-right: 20px; /* Adjust the margin as needed */
   }
 
   /* Additional CSS styling for the title and header */
-  .header-title h1 {
+.header-title h1 {
     font-size: 24px;
     font-weight: bold;
     color: #333;
   }
 
-  .header-subtitle {
+.header-subtitle {
     font-size: 18px;
     color: #666;
   }
