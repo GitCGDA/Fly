@@ -7,23 +7,23 @@
     <style>
         /* Style for the container */
         .container {
-            width: 200px; /* Set the width of the container */
-            height: 100px; /* Set the height of the container */
-            display: flex; /* Use flexbox to arrange items horizontally */
-            align-items: center; /* Vertically center items */
+            width: 1000px; /* Set the width of the container to 800px */
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         /* Style for the text */
         .text {
-            flex: 70%; /* Allow text to take up 70% of the container width */
+            flex: 7; /* Make the text box take up 7 times the available space (70%) */
             padding: 20px; /* Add some padding for spacing */
         }
 
         /* Style for the image */
         .image {
-            flex: 30%; /* Allow image to take up 30% of the container width */
-            max-width: 100%; /* Ensure the image does not exceed its container */
-            height: auto; /* Maintain image aspect ratio */
+            flex: 3; /* Make the image take up 3 times the available space (30%) */
+            max-width: 50%; /* Ensure the image doesn't exceed its container */
+            margin-right: 20px; /* Adjust as needed to create spacing between text and image */
         }
     </style>
 </head>
