@@ -110,7 +110,6 @@ h2 {
 
 .slider-container {
     align-items: center;
-    justify-content: center;
 }
 
 .slide {
@@ -244,8 +243,8 @@ a:hover {
 
 /* Footer styles */
 footer {
-    background-color: #ffffff;
-    color: #333;
+    background-color: #333;
+    color: #fff;
     padding: 10px;
     text-align: center;
 }
