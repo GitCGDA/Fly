@@ -1,41 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Container with Text (70%) and Image (30%)</title>
-    <style>
-        /* Style for the container */
-        .container {
-            width: 1000px; /* Set the width of the container to 800px */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+<nav class="mobile-nav">
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <ul class="menu-list">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
 
-        /* Style for the text */
-        .text {
-            flex: 7; /* Make the text box take up 7 times the available space (70%) */
-            padding: 20px; /* Add some padding for spacing */
-        }
-
-        /* Style for the image */
-        .image {
-            flex: 3; /* Make the image take up 3 times the available space (30%) */
-            max-width: 50%; /* Ensure the image doesn't exceed its container */
-            margin-right: 20px; /* Adjust as needed to create spacing between text and image */
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="text">
-            <h2>Heading</h2>
-            <p>This is some text aligned with an image.</p>
-        </div>
-        <div class="image">
-            <img src="images/Shin.jpeg" alt="Image Alt Text">
-        </div>
-    </div>
-</body>
-</html>
+<!-- JavaScript to toggle the mobile menu -->
+<script>
+  function toggleMenu() {
+      const menuList = document.querySelector('.menu-list');
+      menuList.classList.toggle('show');
+  }
+</script>
