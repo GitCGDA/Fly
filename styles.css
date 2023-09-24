@@ -89,12 +89,12 @@ h2 {
   }
 
 .header-title {
-    margin-right: 20px; /* Adjust the margin as needed */
+    margin-right: 40px; /* Adjust the margin as needed */
   }
 
   /* Additional CSS styling for the title and header */
 .header-title h1 {
-    font-size: 24px;
+    font-size: 38px;
     font-weight: bold;
     color: #333;
   }
