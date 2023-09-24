@@ -111,6 +111,7 @@ h2 {
     width: 1000px; /* Set the width of the container to 800px */
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .slider {
