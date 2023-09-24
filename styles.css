@@ -71,6 +71,7 @@ h2 {
 .header-container {
     display: flex;
     align-items: center;
+    justify-content: center;
   }
 
 .header-title {
@@ -81,7 +82,7 @@ h2 {
 .header-title h1 {
     font-size: 38px;
     font-weight: bold;
-    color: #333;
+    color: #ea0d0d;
   }
 
 .header-subtitle nav {
