@@ -9,7 +9,10 @@ body, h1, h2, h3, p, ul, ol, li {
 body {
     background-color: #ffffff;
     font-family: Arial, sans-serif;
-    margin: 50px;
+    margin-top: 0px;
+    margin-right: 100px;
+    margin-bottom: 0px;
+    margin-left: 100px;
 }
 
 
