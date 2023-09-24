@@ -111,20 +111,11 @@ h2 {
 .slider-container {
     align-items: center;
     justify-content: center;
-}
-
-.slide {
     width: 1000px; /* Set the width of the container to 800px */
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
-.slider {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
 
 .text-box {
     flex: 7; /* Make the text box take up 7 times the available space (70%) */
@@ -143,20 +134,13 @@ h2 {
     line-height: 1.5; /* Adjust line height for readability */
 }
 
-.slider-controls {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
 
-.control-button {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    margin: 0 5px;
-    cursor: pointer;
-}
+
+
+
+
+
+
 
 
 
