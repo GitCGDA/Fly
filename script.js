@@ -1,10 +1,9 @@
 
-/*Menu title - mobile friendly */
-<script>
-    document.querySelector('.menu-icon').addEventListener('click', function() {
+/*Menu-title */
+document.querySelector('.menu-icon').addEventListener('click', function() {
         document.querySelector('.menu').classList.toggle('show');
     });
-</script>
+
 
 
 
