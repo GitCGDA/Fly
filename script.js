@@ -1,3 +1,24 @@
+
+/*Menu title - mobile friendly */
+<script>
+    document.querySelector('.menu-icon').addEventListener('click', function() {
+        document.querySelector('.menu').classList.toggle('show');
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 let slideIndex = 0;
 
     function showSlides() {
