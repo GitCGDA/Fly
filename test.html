@@ -1,46 +1,91 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <style>
-    /* Style the top-level menu items */
-    .menu {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
+    <title>Website Title</title>
+    <style>
+        /* CSS Styles */
+        header {
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
 
-    .menu li {
-      display: inline;
-      margin-right: 20px;
-      position: relative;
-    }
+        h1 {
+            margin: 0;
+        }
 
-    /* Style the dropdown menu */
-    .sub-menu {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background-color: #f1f1f1;
-      padding: 10px;
-    }
+        .menu-icon {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
 
-    .menu li:hover .sub-menu {
-      display: block;
-    }
-  </style>
+        .bar {
+            width: 30px;
+            height: 3px;
+            background-color: #fff;
+            margin: 3px 0;
+        }
+
+        .menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .menu li {
+            margin-right: 20px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        /* Media query for mobile responsiveness */
+        @media screen and (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+            }
+
+            .menu.show {
+                display: flex;
+            }
+
+            .menu-icon {
+                display: flex;
+            }
+        }
+    </style>
 </head>
 <body>
-  <ul class="menu">
-    <li><a href="#">Home</a></li>
-    <li><a href="#">About</a>
-      <ul class="sub-menu">
-        <li><a href="#">Mission</a></li>
-        <li><a href="#">Vision</a></li>
-      </ul>
-    </li>
-    <li><a href="#">Services</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
+    <header>
+        <h1>Website Title</h1>
+        <nav>
+            <div class="menu-icon">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <script>
+        // JavaScript for mobile menu toggle
+        document.querySelector('.menu-icon').addEventListener('click', function() {
+            document.querySelector('.menu').classList.toggle('show');
+        });
+    </script>
+    <!-- Rest of your website content goes here -->
 </body>
 </html>
