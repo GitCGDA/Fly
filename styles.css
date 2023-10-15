@@ -98,16 +98,16 @@ h2 {
 
 /* Media query for mobile responsiveness */
 @media screen and (max-width: 768px) {
-    .menu {
+.menu {
         display: none;
         flex-direction: column;
     }
 
-    .menu.show {
+.menu.show {
         display: flex;
     }
 
-    .menu-icon {
+.menu-icon {
         display: flex;
     }
 }
