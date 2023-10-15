@@ -287,21 +287,21 @@ footer {
 /* Responsive styles */
 @media (max-width: 768px) {
     /* Styles for screens up to 768px wide */
-    nav ul {
+nav ul {
         flex-direction: column;
         text-align: center;
     }
     
-    nav a {
+nav a {
         display: block;
         padding: 1rem 0;
     }
 
-        .text-box {
+.text-box {
             padding: 10px;
         }
 
-        .container img {
+.container img {
             margin-top: 10px;
         }
 
