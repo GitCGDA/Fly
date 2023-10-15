@@ -1,35 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    /* Style the list */
-    ul {
-      list-style-type: disc;
+    /* Style the top-level menu items */
+    .menu {
+      list-style: none;
       padding: 0;
-    }
-    
-    /* Style the list items */
-    li {
-      padding: 10px;
-      font-size: 16px;
+      margin: 0;
     }
 
-    /* Add some media queries for responsiveness */
-    @media (max-width: 768px) {
-      li {
-        font-size: 14px;
-      }
+    .menu li {
+      display: inline;
+      margin-right: 20px;
+      position: relative;
+    }
+
+    /* Style the dropdown menu */
+    .sub-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #f1f1f1;
+      padding: 10px;
+    }
+
+    .menu li:hover .sub-menu {
+      display: block;
     }
   </style>
 </head>
 <body>
-  <h1>Mobile-Friendly Unordered List</h1>
-  <ul>
-    <li>Item 1</li>
-    <li>Item 2</li>
-    <li>Item 3</li>
-    <li>Item 4</li>
+  <ul class="menu">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a>
+      <ul class="sub-menu">
+        <li><a href="#">Mission</a></li>
+        <li><a href="#">Vision</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Contact</a></li>
   </ul>
 </body>
 </html>
