@@ -1,17 +1,35 @@
-<nav class="mobile-nav">
-  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-  <ul class="menu-list">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Contact</a></li>
-  </ul>
-</nav>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Style the list */
+    ul {
+      list-style-type: disc;
+      padding: 0;
+    }
+    
+    /* Style the list items */
+    li {
+      padding: 10px;
+      font-size: 16px;
+    }
 
-<!-- JavaScript to toggle the mobile menu -->
-<script>
-  function toggleMenu() {
-      const menuList = document.querySelector('.menu-list');
-      menuList.classList.toggle('show');
-  }
-</script>
+    /* Add some media queries for responsiveness */
+    @media (max-width: 768px) {
+      li {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Mobile-Friendly Unordered List</h1>
+  <ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+  </ul>
+</body>
+</html>
