@@ -3,126 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
     <style>
-        /* Reset some default styles for lists and links */
-        body, ul {
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
 
-        /* Style the header and title */
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             background-color: #333;
             color: #fff;
-            padding: 10px 20px;
+            padding: 10px;
+            text-align: center;
         }
 
-        header h1 {
-            margin: 0;
-        }
-
-        /* Style the desktop navigation menu */
-        .desktop-menu {
+        nav {
+            background-color: #444;
             display: flex;
+            justify-content: center;
         }
 
-        .desktop-menu ul {
+        ul {
             list-style: none;
+            padding: 0;
+            margin: 0;
             display: flex;
         }
 
-        .desktop-menu li {
+        li {
             margin: 0 20px;
         }
 
-        .desktop-menu a {
+        a {
             text-decoration: none;
             color: #fff;
         }
 
-        /* Style the mobile menu */
         .mobile-menu {
             display: none;
-            background-color: #333; /* Background color for the mobile menu */
-            padding: 20px;
-        }
-
-        .mobile-menu ul {
-            list-style: none;
-        }
-
-        .mobile-menu li {
-            margin: 10px 0;
-        }
-
-        .mobile-menu a {
-            text-decoration: none;
-            color: #fff;
-        }
-
-        /* Style the menu icon for mobile */
-        .menu-icon {
-            flex-direction: column;
-            cursor: pointer;
-            padding: 5px;
-        }
-
-        .bar {
-            background-color: #fff;
-            height: 3px;
-            width: 25px;
-            margin: 3px 0;
         }
 
         @media (max-width: 768px) {
-            .desktop-menu {
+            ul {
                 display: none;
             }
-
-            .menu-icon {
-                display: flex;
-            }
-
             .mobile-menu {
                 display: block;
+                text-align: center;
+                padding: 10px;
+                cursor: pointer;
+                background-color: #444;
+                color: #fff;
             }
         }
     </style>
-<script>
-        function toggleMobileMenu() {
-            const mobileMenu = document.querySelector(".mobile-menu");
-            mobileMenu.style.display = mobileMenu.style.display === "block" ? "none" : "block";
-        }
-</script>
-<title>Your Website Title</title>
 </head>
 <body>
     <header>
-        <h1>Your Website Title</h1>
-        <div class="menu-icon" onclick="toggleMobileMenu()">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
-        <nav class="desktop-menu">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
+        <h1>Your Website</h1>
     </header>
-    <nav class="mobile-menu">
-        <ul>
+    <nav>
+        <div class="mobile-menu" onclick="toggleMenu()">&#9776 Menu</div>
+        <ul id="main-menu">
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Services</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
     </nav>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('main-menu');
+            if (menu.style.display === 'flex') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'flex';
+            }
+        }
+    </script>
 </body>
 </html>
