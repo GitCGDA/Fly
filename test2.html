@@ -65,7 +65,6 @@
 
         /* Style the menu icon for mobile */
         .menu-icon {
-            display: none;
             flex-direction: column;
             cursor: pointer;
             padding: 5px;
@@ -77,21 +76,7 @@
             width: 25px;
             margin: 3px 0;
         }
-
-        @media (max-width: 768px) {
-            .desktop-menu {
-                display: none;
-            }
-
-            .menu-icon {
-                display: flex;
-            }
-
-            .mobile-menu {
-                display: block;
-            }
-        }
-</style>
+    </style>
 <script>
         function toggleMobileMenu() {
             const mobileMenu = document.querySelector(".mobile-menu");
