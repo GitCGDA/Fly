@@ -42,7 +42,7 @@ header h1 {
 .mobile-menu ul {
     list-style: none;
     padding: 10px;
-    background-color: rgba(0, 0, 0, 0.8); /* Add a semi-transparent background for the menu items */
+    background-color: rgba(0, 0, 0, 0.16); /* Add a semi-transparent background for the menu items */
 }
 
 .mobile-menu li {
@@ -51,7 +51,7 @@ header h1 {
 
 .mobile-menu a {
     text-decoration: none;
-    color: #fff;
+    color: #080808;
 }
 
 /* Style the mobile menu icon */
