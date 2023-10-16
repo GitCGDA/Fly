@@ -48,11 +48,6 @@
             display: none;
             background-color: #333; /* Background color for the mobile menu */
             padding: 20px;
-            position: absolute;
-            top: 60px;
-            left: 0;
-            right: 0;
-            z-index: 1;
         }
 
         .mobile-menu ul {
@@ -81,15 +76,25 @@
             width: 25px;
             margin: 3px 0;
         }
+
+        @media (max-width: 768px) {
+            .desktop-menu {
+                display: none;
+            }
+
+            .menu-icon {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+        }
     </style>
 <script>
         function toggleMobileMenu() {
             const mobileMenu = document.querySelector(".mobile-menu");
-            if (mobileMenu.style.display === "block" || mobileMenu.style.display === "") {
-                mobileMenu.style.display = "none";
-            } else {
-                mobileMenu.style.display = "block";
-            }
+            mobileMenu.style.display = mobileMenu.style.display === "block" ? "none" : "block";
         }
 </script>
 <title>Your Website Title</title>
