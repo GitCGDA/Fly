@@ -3,36 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Website</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            font-family: Arial, sans-serif;
         }
 
         header {
             background-color: #333;
             color: #fff;
-            padding: 10px;
-            text-align: center;
-        }
-
-        nav {
-            background-color: #444;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
         }
 
-        ul {
+        h1 {
+            margin: 0;
+        }
+
+        .desktop-menu ul, .mobile-menu ul {
             list-style: none;
             padding: 0;
             margin: 0;
-            display: flex;
         }
 
-        li {
-            margin: 0 20px;
+        .desktop-menu li, .mobile-menu li {
+            display: inline;
+            margin-right: 20px;
         }
 
         a {
@@ -40,48 +39,69 @@
             color: #fff;
         }
 
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+        }
+
         .mobile-menu {
             display: none;
         }
 
         @media (max-width: 768px) {
-            ul {
+            .desktop-menu {
                 display: none;
             }
+
+            .menu-icon {
+                display: block;
+            }
+
             .mobile-menu {
                 display: block;
-                text-align: center;
-                padding: 10px;
-                cursor: pointer;
-                background-color: #444;
-                color: #fff;
             }
         }
     </style>
+    <script>
+        var mobileMenu = null;
+        var menuIcon = null;
+
+        function toggleMobileMenu() {
+            if (mobileMenu.style.display === 'block' || mobileMenu.style.display === '') {
+                mobileMenu.style.display = 'none';
+            } else {
+                mobileMenu.style.display = 'block';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            mobileMenu = document.querySelector('.mobile-menu');
+            menuIcon = document.querySelector('.menu-icon');
+            menuIcon.addEventListener('click', toggleMobileMenu);
+        });
+    </script>
+    <title>Your Website</title>
 </head>
 <body>
     <header>
-        <h1>Your Website</h1>
+        <h1>Your Website Title</h1>
+        <div class="menu-icon">&#9776;</div>
+        <nav class="desktop-menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
     </header>
-    <nav>
-        <div class="mobile-menu" onclick="toggleMenu()">&#9776 Menu</div>
-        <ul id="main-menu">
+    <nav class="mobile-menu">
+        <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Services</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
     </nav>
-
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById('main-menu');
-            if (menu.style.display === 'flex') {
-                menu.style.display = 'none';
-            } else {
-                menu.style.display = 'flex';
-            }
-        }
-    </script>
 </body>
 </html>
