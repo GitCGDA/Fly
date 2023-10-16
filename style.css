@@ -102,14 +102,14 @@ main {
 
 #section1 {
     background-color: #040404;
-    padding: 50px;
+    padding: 30px;
     font-size: 24px;
     color: white; /* Set the text color for section1 to white */
 }
 
 #section2 {
     background-color: #e0e0e0;
-    padding: 50px;
+    padding: 30px;
     font-size: 24px;
     color: black; /* Set the text color for section2 to black */
     display: flex; /* Use a flexbox layout */
