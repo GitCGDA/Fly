@@ -1,132 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* Reset default margin and padding */
-        body, ul {
-            margin: 0;
-            padding: 0;
+        .container {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f0f0f0;
         }
 
-        /* Style the header */
-        header {
-            background-color: #333;
-            color: #fff;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-        }
-
-        header h1 {
-            margin: 0;
-        }
-
-        /* Style the navigation menu */
-        .desktop-menu ul {
-            list-style: none;
-            display: flex;
-        }
-
-        .desktop-menu li {
-            margin-right: 20px;
-        }
-
-        .desktop-menu a {
-            text-decoration: none;
-            color: #fff;
-        }
-
-        /* Style the mobile menu */
-        .mobile-menu {
-            display: none;
-            background-color: transparent;
-            padding: 20px; /* Add padding to the mobile menu */
-        }
-
-        .mobile-menu ul {
-            list-style: none;
-            padding: 10px;
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-
-        .mobile-menu li {
-            margin-bottom: 10px;
-        }
-
-        .mobile-menu a {
-            text-decoration: none;
-            color: #fff;
-        }
-
-        /* Style the mobile menu icon */
-        .menu-icon {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .bar {
-            width: 30px;
-            height: 3px;
-            background-color: #fff;
-            margin: 3px 0;
-        }
-
-        @media (max-width: 768px) {
-            .desktop-menu {
-                display: none;
-            }
-
-            .menu-icon {
-                display: flex;
-            }
-
-            .mobile-menu {
-                display: block;
-            }
+        .textbox {
+            width: 100%;
+            margin: 10px 0;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Your Website Title</h1>
-        <div class="menu-icon" onclick="toggleMenu()">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
-        <nav class="desktop-menu">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <nav class="mobile-menu" id="mobileMenu">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
-    <main>
-        <!-- Your website content goes here -->
-    </main>
-    <script>
-        function toggleMenu() {
-            var mobileMenu = document.getElementById("mobileMenu");
-            if (mobileMenu.style.display === "block") {
-                mobileMenu.style.display = "none";
-            } else {
-                mobileMenu.style.display = "block";
-            }
-        }
-    </script>
+    <div class="container">
+        <input type="text" class="textbox" placeholder="Text Box 1">
+        <input type="text" class="textbox" placeholder="Text Box 2">
+        <input type="text" class="textbox" placeholder="Text Box 3">
+    </div>
 </body>
 </html>
