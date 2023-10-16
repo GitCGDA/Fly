@@ -94,19 +94,31 @@ main {
     flex: 1;
     max-width: auto;
     margin: ;
-    padding: 40px;
-    background-color: #040404;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
+/*h2 {
     font-size: 24px; /* You can adjust the font size as needed */
     color: #fff; /* Change the color to your preference */
     margin-bottom: 10px;
 }
 
 
+#section1 {
+    background-color: #040404;
+    padding: 50px;
+    font-size: 24px;
+    color: white; /* Set the text color for section1 to white */
+}
 
+#section2 {
+    background-color: #e0e0e0;
+    padding: 50px;
+    font-size: 24px;
+    color: black; /* Set the text color for section2 to black */
+    display: flex; /* Use a flexbox layout */
+    align-items: center; /* Vertically align content in the middle */
+}
 
 
 
