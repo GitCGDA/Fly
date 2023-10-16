@@ -3,75 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobile-Friendly Navigation Menu</title>
+    <title>Mobile-Friendly Menu</title>
     <style>
         /* CSS Styles */
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-        .mobile-menu {
-            display: none; /* Hide the menu by default for mobile devices */
-            background-color: #333;
-        }
-
-        .mobile-menu ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .mobile-menu li {
-            padding: 15px;
-        }
-
-        .mobile-menu a {
-            text-decoration: none;
-            color: #fff;
-        }
-
-        .has-dropdown .submenu {
+        #mobile-menu ul {
             display: none;
-            background-color: #444;
         }
 
-        .has-dropdown:hover .submenu {
-            display: block; /* Show submenu on hover */
+        #menu-icon {
+            display: block;
+            cursor: pointer;
         }
 
-        /* Icons */
-        .fa-caret-down {
-            float: right;
+        @media (max-width: 768px) {
+            #mobile-menu ul {
+                display: block;
+            }
+
+            #menu-icon {
+                display: none;
+            }
         }
 
+        /* Mobile Menu Animation */
+        #mobile-menu {
+            display: none;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        #mobile-menu.show {
+            display: block;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
-    <nav class="mobile-menu">
+    <!-- Mobile Menu Icon -->
+    <div id="menu-icon">☰</div>
+
+    <!-- Mobile Menu -->
+    <nav id="mobile-menu">
         <ul>
             <li><a href="#">Home</a></li>
-            <li class="has-dropdown">
-                <a href="#">Services <i class="fas fa-caret-down"></i></a>
-                <ul class="submenu">
-                    <li><a href="#">Service 1</a></li>
-                    <li><a href="#">Service 2</a></li>
-                    <!-- Add more service items here -->
-                </ul>
-            </li>
             <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Portfolio</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
     </nav>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        $(document).ready(function () {
-            $('.has-dropdown').click(function () {
-                $(this).find('.submenu').slideToggle();
-            });
+        // JavaScript for Mobile Toggle
+        const menuIcon = document.getElementById('menu-icon');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuIcon.addEventListener('click', () => {
+            mobileMenu.classList.toggle('show');
         });
     </script>
-
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>
 </body>
 </html>
