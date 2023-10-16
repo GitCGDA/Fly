@@ -1,53 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Website Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
+        /* Basic styling */
         body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         header {
             background-color: #333;
             color: #fff;
-            text-align: center;
-            padding: 10px;
+            padding: 10px 0;
         }
 
         h1 {
             margin: 0;
         }
 
-        nav {
-            background-color: #444;
-            text-align: center;
-        }
-
-        nav ul {
+        /* Desktop menu */
+        #desktop-menu ul {
             list-style: none;
+            margin: 0;
             padding: 0;
+            display: flex;
         }
 
-        nav li {
-            display: inline;
-            margin: 10px;
+        #desktop-menu li {
+            margin-right: 20px;
         }
 
-        nav a {
+        #desktop-menu a {
             text-decoration: none;
             color: #fff;
         }
 
-        /* Mobile Menu Styles */
+        /* Mobile menu (hidden by default) */
         #mobile-menu {
             display: none;
-            background-color: #444;
-            text-align: center;
-            padding: 10px;
         }
 
         #mobile-menu ul {
@@ -55,34 +56,21 @@
             padding: 0;
         }
 
-        #mobile-menu li {
-            margin: 10px;
-        }
-
         #mobile-menu a {
             text-decoration: none;
-            color: #fff;
+            color: #333;
         }
 
-        .hidden {
-            display: none;
-        }
-
+        /* Mobile menu toggle button */
         .menu-toggle {
             display: none;
+            font-size: 24px;
             cursor: pointer;
         }
 
-        .menu-toggle span {
-            background-color: #fff;
-            display: block;
-            height: 3px;
-            width: 25px;
-            margin: 4px auto;
-        }
-
-        @media screen and (max-width: 768px) {
-            #navbar {
+        /* Show mobile menu when screen width is less than 768px */
+        @media (max-width: 768px) {
+            #desktop-menu {
                 display: none;
             }
 
@@ -98,14 +86,20 @@
 </head>
 <body>
     <header>
-        <h1>Your Website Title</h1>
-        <div class="menu-toggle" id="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
+        <div class="container">
+            <h1>Title</h1>
+            <div class="menu-toggle" onclick="toggleMobileMenu()">&#9776;</div>
+            <nav id="desktop-menu">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
-    <nav id="navbar">
+    <nav id="mobile-menu" class="hidden">
         <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
@@ -113,23 +107,11 @@
             <li><a href="#">Contact</a></li>
         </ul>
     </nav>
-    <div id="mobile-menu" class="hidden">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </div>
     <script>
-        document.getElementById("menu-toggle").addEventListener("click", function () {
-            var mobileMenu = document.getElementById("mobile-menu");
-            if (mobileMenu.style.display === "block") {
-                mobileMenu.style.display = "none";
-            } else {
-                mobileMenu.style.display = "block";
-            }
-        });
+        function toggleMobileMenu() {
+            var mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        }
     </script>
 </body>
 </html>
