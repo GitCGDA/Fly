@@ -48,6 +48,11 @@
             display: none;
             background-color: #333; /* Background color for the mobile menu */
             padding: 20px;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            right: 0;
+            z-index: 1;
         }
 
         .mobile-menu ul {
@@ -80,7 +85,11 @@
 <script>
         function toggleMobileMenu() {
             const mobileMenu = document.querySelector(".mobile-menu");
-            mobileMenu.style.display = mobileMenu.style.display === "block" ? "none" : "block";
+            if (mobileMenu.style.display === "block" || mobileMenu.style.display === "") {
+                mobileMenu.style.display = "none";
+            } else {
+                mobileMenu.style.display = "block";
+            }
         }
 </script>
 <title>Your Website Title</title>
