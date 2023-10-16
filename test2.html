@@ -44,9 +44,12 @@
         }
 
         .menu-icon {
-            display: none;
             cursor: pointer;
             font-size: 24px;
+        }
+
+        .menu-icon:after {
+            content: '\2630'; /* Unicode character for the "hamburger" menu icon */
         }
 
         .mobile-menu {
@@ -68,7 +71,7 @@
                 display: none;
             }
             .mobile-menu {
-                display: block;
+                display: none;
             }
         }
     </style>
@@ -91,8 +94,8 @@
 <body>
     <header>
         <h1>Your Website Title</h1>
-        <div class="menu-icon">&#9776;</div>
-        <nav class="desktop-menu">
+        <div class="menu-icon" id="menu-icon"></div>
+        <nav class="desktop-menu" id="desktop-menu">
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
@@ -101,7 +104,7 @@
             </ul>
         </nav>
     </header>
-    <nav class="mobile-menu">
+    <nav class="mobile-menu" id="mobile-menu">
         <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
