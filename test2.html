@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* Reset some default styles */
-        * {
+        /* CSS Styles */
+        body, h1, ul {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
         body {
@@ -18,84 +17,71 @@
         header {
             background-color: #333;
             color: #fff;
+            padding: 10px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 20px;
         }
 
-        header h1 {
+        h1 {
             font-size: 24px;
         }
 
         nav ul {
             list-style: none;
-            display: flex;
         }
 
-        nav li {
+        nav ul li {
+            display: inline;
             margin-right: 20px;
         }
 
-        nav a {
-            text-decoration: none;
+        nav ul li a {
             color: #fff;
-            font-weight: bold;
+            text-decoration: none;
         }
 
-        .menu-icon {
+        #mobile-menu {
+            display: none;
+        }
+
+        #mobile-menu-icon {
+            display: none;
             cursor: pointer;
             font-size: 24px;
         }
 
-        .menu-icon:after {
-            content: '\2630'; /* Unicode character for the "hamburger" menu icon */
-        }
-
-        .mobile-menu {
-            display: none;
-            background-color: #333;
-            position: absolute;
-            top: 60px;
-            left: 0;
-            width: 100%;
-            padding: 10px 0;
-            text-align: center;
-        }
-
         @media (max-width: 768px) {
-            .menu-icon {
+            nav#desktop-menu {
+                display: none;
+            }
+
+            #mobile-menu {
                 display: block;
             }
-            .desktop-menu {
-                display: none;
-            }
-            .mobile-menu {
-                display: none;
+
+            #mobile-menu-icon {
+                display: block;
             }
         }
     </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const menuIcon = document.querySelector('.menu-icon');
-            const mobileMenu = document.querySelector('.mobile-menu');
-
-            menuIcon.addEventListener('click', () => {
-                if (mobileMenu.style.display === 'block') {
-                    mobileMenu.style.display = 'none';
-                } else {
-                    mobileMenu.style.display = 'block';
-                }
-            });
-        });
-    </script>
     <title>Your Website</title>
 </head>
 <body>
     <header>
         <h1>Your Website Title</h1>
-        <div class="menu-icon" id="menu-icon"></div>
-        <nav class="desktop-menu" id="desktop-menu">
+        <nav id="desktop-menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div id="mobile-menu-icon">
+            &#9776; <!-- Hamburger icon (Unicode) -->
+        </div>
+        <nav id="mobile-menu">
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
@@ -104,16 +90,19 @@
             </ul>
         </nav>
     </header>
-    <nav class="mobile-menu" id="mobile-menu">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
     <main>
         <!-- Your website content goes here -->
     </main>
+    <script>
+        // JavaScript for toggling the mobile menu
+        document.getElementById("mobile-menu-icon").addEventListener("click", function() {
+            var mobileMenu = document.getElementById("mobile-menu");
+            if (mobileMenu.style.display === "block") {
+                mobileMenu.style.display = "none";
+            } else {
+                mobileMenu.style display = "block";
+            }
+        });
+    </script>
 </body>
 </html>
