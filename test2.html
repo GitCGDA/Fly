@@ -3,63 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobile-Friendly Menu</title>
     <style>
-        /* CSS Styles */
-        #mobile-menu ul {
+        /* Reset some default styles for lists and links */
+        body, ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Style the header and title */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        /* Style the desktop navigation menu */
+        .desktop-menu {
+            display: flex;
+        }
+
+        .desktop-menu ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .desktop-menu li {
+            margin: 0 20px;
+        }
+
+        .desktop-menu a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        /* Style the mobile menu */
+        .mobile-menu {
             display: none;
         }
 
-        #menu-icon {
-            display: block;
+        .mobile-menu ul {
+            list-style: none;
+        }
+
+        .mobile-menu li {
+            margin: 10px 0;
+        }
+
+        .mobile-menu a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        /* Style the menu icon for mobile */
+        .menu-icon {
+            display: none;
+            flex-direction: column;
             cursor: pointer;
+            padding: 5px;
+        }
+
+        .bar {
+            background-color: #fff;
+            height: 3px;
+            width: 25px;
+            margin: 3px 0;
         }
 
         @media (max-width: 768px) {
-            #mobile-menu ul {
-                display: block;
-            }
-
-            #menu-icon {
+            .desktop-menu {
                 display: none;
             }
-        }
 
-        /* Mobile Menu Animation */
-        #mobile-menu {
-            display: none;
-            transition: transform 0.3s ease-in-out;
-        }
+            .menu-icon {
+                display: flex;
+            }
 
-        #mobile-menu.show {
-            display: block;
-            transform: translateY(0);
+            .mobile-menu {
+                display: block;
+            }
         }
     </style>
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.querySelector(".mobile-menu");
+            mobileMenu.style.display = mobileMenu.style.display === "block" ? "none" : "block";
+        }
+    </script>
+    <title>Your Website Title</title>
 </head>
 <body>
-    <!-- Mobile Menu Icon -->
-    <div id="menu-icon">☰</div>
-
-    <!-- Mobile Menu -->
-    <nav id="mobile-menu">
+    <header>
+        <h1>Your Website Title</h1>
+        <div class="menu-icon" onclick="toggleMobileMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <nav class="desktop-menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <nav class="mobile-menu">
         <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Services</a></li>
-            <li><a href="#">Portfolio</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
     </nav>
-
-    <script>
-        // JavaScript for Mobile Toggle
-        const menuIcon = document.getElementById('menu-icon');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        menuIcon.addEventListener('click', () => {
-            mobileMenu.classList.toggle('show');
-        });
-    </script>
 </body>
 </html>
