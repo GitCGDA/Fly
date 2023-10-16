@@ -1,109 +1,60 @@
-/* Reset some default browser styles */
-body, h1, h2, h3, p, ul, ol, li {
+/* Reset default margin and padding */
+body, ul {
     margin: 0;
     padding: 0;
 }
 
-
-/* Set a background color for the entire page */
-body {
-    background-color: #ffffff;
-    font-family: Arial, sans-serif;
-    margin-top: 0px;
-    margin-right: 100px;
-    margin-bottom: 0px;
-    margin-left: 100px;
-}
-
-
-
-
-
-
-
-/* Main content styles */
-.container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* Section heading styles */
-.section-header {
-    font-size: 36px;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-h2 {
-    text-align: center;
-    font-family: monospace /* Change the font family */
-      font-size: 48px; /* Change the font size */
-      font-weight: bold; /* Change the font weight (e.g., bold) */
-      font-style:; /* Change the font style (e.g., italic) */
-      color: #333; /* Change the text color */
-      text-decoration:; /* Add underline */
-      /* You can add more font properties as needed */
-  }
-
-
-  h3 {
-    text-align: left;
-    font-family: monospace /* Change the font family */
-      font-size: 36px; /* Change the font size */
-      font-weight: bold; /* Change the font weight (e.g., bold) */
-      font-style:; /* Change the font style (e.g., italic) */
-      color: #333; /* Change the text color */
-      text-decoration:; /* Add underline */
-      /* You can add more font properties as needed */
-  }
-
-
-
-
-
-
-  
-
-.header-container {
+/* Style the header */
+header {
+    background-color: #333;
+    color: #fff;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding: 30px;
-  }
+    padding: 10px 20px;
+}
 
-.header-title {
-    margin-right: 20px; /* Adjust the margin as needed */
-  }
+header h1 {
+    margin: 0;
+}
 
-  /* Additional CSS styling for the title and header */
-.header-title h1 {
-    font-size: 38px;
-    font-weight: bold;
-    color: #ea0d0d;
-  }
-
-.header-subtitle nav {
-    background-color: #ffffff;
-    margin-right: 20px;
-  }
-
-.header-subtitle nav ul {
+/* Style the navigation menu */
+.desktop-menu ul {
     list-style: none;
-  }
+    display: flex;
+}
 
-.header-subtitle nav li {
-    display: inline;
+.desktop-menu li {
     margin-right: 20px;
 }
 
-.header-subtitle nav a {
+.desktop-menu a {
     text-decoration: none;
-    font-size: 18px;
-    color: #666;
+    color: #fff;
 }
 
+/* Style the mobile menu */
+.mobile-menu {
+    display: none;
+    background-color: transparent; /* Set the background to transparent */
+}
 
-/* Styling for the mobile menu icon */
+.mobile-menu ul {
+    list-style: none;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8); /* Add a semi-transparent background for the menu items */
+}
+
+.mobile-menu li {
+    margin-bottom: 10px;
+}
+
+.mobile-menu a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Style the mobile menu icon */
 .menu-icon {
     display: none;
     flex-direction: column;
@@ -117,218 +68,24 @@ h2 {
     margin: 3px 0;
 }
 
-/* Styling for the navigation menu */
-.menu {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-.menu li {
-    margin-right: 20px;
-}
-
-.menu a {
-    text-decoration: none;
-    color: #fff;
-}
-
-/* Media query for mobile responsiveness */
-@media screen and (max-width: 768px) {
-    .menu {
+@media (max-width: 768px) {
+    .desktop-menu {
         display: none;
-        flex-direction: column;
-    }
-
-    .menu.show {
-        display: flex;
     }
 
     .menu-icon {
         display: flex;
     }
+
+    .mobile-menu {
+        display: block;
+    }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-.slider-container {
-    align-items: center;
-}
-
-.slide {
-    width: 1000px; /* Set the width of the container to 800px */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.slider {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-
-.text-box {
-    flex: 7; /* Make the text box take up 7 times the available space (70%) */
-    padding: 20px; /* Add some padding for spacing */
-}
-
-.slide img {
-    flex: 3; /* Make the image take up 3 times the available space (30%) */
-    max-width: 50%; /* Ensure the image doesn't exceed its container */
-    margin-right: 20px; /* Adjust as needed to create spacing between text and image */
-}
-
-/* Adjust font size and line height for readability */
-.text-box p {
-    font-size: 16px; /* Adjust font size as needed */
-    line-height: 1.5; /* Adjust line height for readability */
-}
-
-.slider-controls {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.control-button {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    margin: 0 5px;
-    cursor: pointer;
-}
-
-
-
-
-
-
-
-
-
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.card {
-    width: calc(33.33% - 20px);
-    max-width: 300px;
-    background-color: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-}
-
-.card img {
-    width: 100%; /* Set a fixed width for all images */
-    height: 200px; /* Set a fixed height for all images */
-    object-fit: cover;
-}
-
-.card h2 {
-    font-size: 18px;
-    margin: 10px 0;
-    text-align: center;
-}
-
-.card p {
-    font-size: 14px;
-    color: #666;
-}
-
-
-
-
-
-
-
-
-/* Paragraph text styles */
-p {
-    line-height: 1.5;
-    margin-bottom: 20px;
-}
-
-/* Link styles */
-a {
-    color: #0f0e0e;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Button styles */
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
-.button:hover {
-    background-color: #0056b3;
-}
-
-/* Footer styles */
+/* Style the footer */
 footer {
     background-color: #333;
     color: #fff;
-    padding: 10px;
     text-align: center;
+    padding: 10px;
 }
-
-/* Responsive styles */
-@media (max-width: 768px) {
-    /* Styles for screens up to 768px wide */
-nav ul {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-nav a {
-        display: block;
-        padding: 1rem 0;
-    }
-
-.text-box {
-            padding: 10px;
-        }
-
-.container img {
-            margin-top: 10px;
-        }
-
-
-
-
-
-}
-
-
