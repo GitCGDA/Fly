@@ -1,18 +1,79 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Menu Example</title>
     <style>
-        #textbox {
-            width: 200px;
-            height: 30px;
-            background-color: black;
-            color: white; /* Set text color to make it visible on a black background */
-            border: 1px solid #ccc;
-            padding: 5px;
+        /* CSS styles go here */
+
+        /* Styles for mobile menu */
+        .mobile-menu {
+            display: none;
         }
+
+        .menu-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background: #333;
+        }
+
+        /* Media query for small screens (mobile) */
+        @media screen and (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .logo {
+                display: none;
+            }
+        }
+
+        /* Rest of your CSS styles */
     </style>
 </head>
 <body>
-    <input type="text" id="textbox" name="textbox" placeholder="Enter text">
+    <header>
+        <div class="logo">Your Logo</div>
+        <button class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="mobile-menu" id="mobile-menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- Your website content goes here -->
+    </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.getElementById("menu-toggle");
+            const mobileMenu = document.getElementById("mobile-menu");
+
+            menuToggle.addEventListener("click", function () {
+                mobileMenu.classList.toggle("active");
+            });
+        });
+    </script>
 </body>
 </html>
