@@ -102,11 +102,29 @@ h2 {
 }
 
 
+h3 {
+    font-size: 24px; /* You can adjust the font size as needed */
+    color: #040404; /* Change the color to your preference */
+    margin-bottom: 10px;
+}
 
 
 
 
 
+#section1 {
+    background-color: #040404;
+    padding: 20px;
+    font-size: 18px;
+    color: white; /* Set the text color for section1 to white */
+}
+
+#section2 {
+    background-color: #fff;
+    padding: 30px;
+    font-size: 18px;
+    align-items: center; /* Vertically align content in the middle */
+}
 
 
 
