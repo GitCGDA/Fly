@@ -127,7 +127,7 @@ h3 {
 
 #section2 {
     background-color: #fff;
-    padding-top: 0px; /* Add 30px of padding to the top */
+    padding-top: 10px; /* Add 30px of padding to the top */
     padding-bottom: 150px; /* Add 10px of padding to the bottom */
     font-size: 18px;
     text-align: center;
@@ -136,7 +136,7 @@ h3 {
 
 #section3 {
     background-color: #f9ebeb;
-    padding-top: 0px; /* Add 30px of padding to the top */
+    padding-top: 10px; /* Add 30px of padding to the top */
     padding-bottom: 200px; /* Add 10px of padding to the bottom */
     font-size: 18px;
     text-align: center;
