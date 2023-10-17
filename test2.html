@@ -3,130 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobile Menu Example</title>
-    
     <style>
-        /* CSS styles go here */
-
-        /* Reset some default styles */
-        body, h1, h2, p, ul, li {
-            margin: 0;
-            padding: 0;
-        }
-
+        /* Basic styles */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
         }
 
         header {
             background-color: #333;
             color: #fff;
-            text-align: center;
-            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
         }
 
-        nav ul {
+        h1 {
+            margin: 0;
+        }
+
+        nav {
+            display: none;
+        }
+
+        .nav-links {
             list-style: none;
-            background-color: #333;
-            text-align: center;
-            padding: 10px;
+            padding: 0;
+            display: flex;
         }
 
-        nav ul li {
-            display: inline;
+        .nav-links li {
             margin-right: 20px;
         }
 
-        nav ul li a {
+        .nav-links a {
             text-decoration: none;
-            color: #fff;
+            color: #333;
         }
 
-        main {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        footer {
-            text-align: center;
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-        }
-
-        /* Styles for mobile menu */
-        .mobile-menu {
+        /* Mobile menu icon styles */
+        .menu-icon {
             display: none;
-        }
-
-        .menu-toggle {
-            display: none;
-            background: transparent;
-            border: none;
+            flex-direction: column;
             cursor: pointer;
         }
 
-        .menu-toggle span {
-            display: block;
+        .bar {
             width: 25px;
             height: 3px;
-            margin: 5px auto;
-            background: #333;
+            background-color: #fff;
+            margin: 3px 0;
         }
 
-        /* Media query for small screens (mobile) */
-        @media screen and (max-width: 768px) {
-            .menu-toggle {
-                display: block;
+        /* Media query for mobile menu */
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: flex;
             }
-
-            .mobile-menu {
-                display: block;
-            }
-
-            .logo {
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+                background-color: #333;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                z-index: 1;
                 display: none;
             }
+            .nav-links.active {
+                display: flex;
+            }
         }
-
-        /* Rest of your CSS styles */
     </style>
 </head>
 <body>
     <header>
-        <div class="logo">Your Logo</div>
-        <button class="menu-toggle" id="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <nav class="mobile-menu" id="mobile-menu">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
+        <h1>Your Website Title</h1>
+        <div class="menu-icon">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
     </header>
-    <main>
-        <!-- Your website content goes here -->
-    </main>
-    <footer>
-        &copy; 2023 Your Awesome Website
-    </footer>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const menuToggle = document.getElementById("menu-toggle");
-            const mobileMenu = document.getElementById("mobile-menu");
+        const menuIcon = document.querySelector('.menu-icon');
+        const navLinks = document.querySelector('.nav-links');
 
-            menuToggle.addEventListener("click", function () {
-                mobileMenu.classList.toggle("active");
-            });
+        menuIcon.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
         });
     </script>
 </body>
