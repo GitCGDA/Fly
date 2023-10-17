@@ -133,7 +133,12 @@ h3 {
 }
 
 
-
+#section3 {
+    background-color: #ebcbcb;
+    padding: 50px;
+    font-size: 18px;
+    text-align: center;
+}
 
 
 
