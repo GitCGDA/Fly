@@ -56,15 +56,15 @@
             color: #fff;
         }
 
-        /* Style the mobile menu (initially hidden on the right) */
+        /* Style the mobile menu (initially hidden on the left) */
         .mobile-menu {
             position: absolute;
             top: 0;
-            right: -100%;
+            left: -100%;
             width: 80%;
             background-color: #444;
             padding: 20px;
-            transition: right 0.5s;
+            transition: left 0.5s;
         }
 
         .mobile-menu ul {
@@ -86,7 +86,7 @@
             }
 
             .mobile-menu {
-                right: 0;
+                left: 0;
             }
         }
     </style>
@@ -123,10 +123,10 @@
         const mobileMenu = document.querySelector('.mobile-menu');
 
         mobileIcon.addEventListener('click', function () {
-            if (mobileMenu.style.right === '0px' || mobileMenu.style.right === '') {
-                mobileMenu.style.right = '-100%';
+            if (mobileMenu.style.left === '0px' || mobileMenu.style.left === '') {
+                mobileMenu.style.left = '-100%';
             } else {
-                mobileMenu.style.right = '0px';
+                mobileMenu.style.left = '0px';
             }
         });
     </script>
