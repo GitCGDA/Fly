@@ -36,12 +36,7 @@ header h1 {
 /* Style the mobile menu */
 .mobile-menu {
     display: none;
-    background-color: #444;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 80%;
-    padding: 20px;
+    background-color: transparent; /* Set the background to transparent */
 }
 
 .mobile-menu ul {
@@ -60,7 +55,7 @@ header h1 {
 }
 
 /* Style the mobile menu icon */
-.menu-icon {
+.mobile-icon {
     display: ;
     flex-direction: column;
     cursor: pointer;
@@ -72,6 +67,21 @@ header h1 {
     background-color: rgba(0, 0, 0, 0.16);
     margin: 3px 0;
 }
+
+@media (max-width: 768px) {
+    .desktop-menu {
+        display: none;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+}
+
 
 
 
