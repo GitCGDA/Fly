@@ -55,7 +55,7 @@ header h1 {
 }
 
 /* Style the mobile menu icon */
-.menu-icon {
+.mobile-icon {
     display: none;
     flex-direction: column;
     cursor: pointer;
@@ -73,7 +73,7 @@ header h1 {
         display: none;
     }
 
-    .menu-icon {
+    .mobile-icon {
         display: flex;
     }
 
