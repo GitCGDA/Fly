@@ -55,7 +55,7 @@ header h1 {
 
  /* Media query to hide navigation menu on screens with a width less than 768px */
  @media screen and (max-width: 768px) {
-    .mobile-menu a {
+    .dekstop-menu a {
     text-decoration: none;
     color: #080808;
 }
