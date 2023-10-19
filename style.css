@@ -55,8 +55,8 @@ header h1 {
 }
 
 /* Style the mobile menu icon */
-.mobile-icon {
-    display: ;
+.menu-icon {
+    display: none;
     flex-direction: column;
     cursor: pointer;
 }
@@ -82,7 +82,19 @@ header h1 {
     }
 }
 
+@media (max-width: 768px) {
+    .desktop-menu {
+        display: none;
+    }
 
+    .menu-icon {
+        display: flex;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+}
 
 
 
