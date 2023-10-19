@@ -44,52 +44,24 @@
         @media screen and (max-width: 768px) {
             nav {
                 display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background-color: #333;
+                width: 100%;
+                z-index: 1;
+                text-align: center;
+                transition: transform 0.3s ease-in-out;
+                transform: translateY(-100%);
+            }
+
+            nav.open {
+                transform: translateY(0);
+                display: block;
             }
 
             #menu-icon {
                 display: block;
-            }
-
-            #menu-icon.open {
-                display: none;
-            }
-
-            #menu-icon.close {
-                display: block;
-            }
-
-            nav ul {
-                display: block;
-                background-color: #333;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                width: 100%;
-                text-align: center;
-                opacity: 0;
-                transform: translateY(-10px);
-                transition: opacity 0.3s, transform 0.3s;
-            }
-
-            nav.open ul {
-                opacity: 1;
-                transform: translateY(0);
-            }
-
-            nav li {
-                display: block;
-                text-align: center;
-                margin: 10px 0;
-            }
-
-            nav a {
-                color: #fff;
-                font-size: 18px;
-                transition: color 0.3s;
-            }
-
-            nav a:hover {
-                color: #f6c7a2;
             }
         }
     </style>
@@ -119,7 +91,6 @@
 
             menuIcon.addEventListener("click", function () {
                 nav.classList.toggle("open");
-                menuIcon.classList.toggle("open");
             });
         });
     </script>
