@@ -45,16 +45,17 @@
             nav {
                 display: none;
             }
+
             #menu-icon {
                 display: block;
             }
 
             #menu-icon.open {
-                display: block;
+                display: none;
             }
 
             #menu-icon.close {
-                display: none;
+                display: block;
             }
 
             nav ul {
@@ -64,12 +65,31 @@
                 top: 60px;
                 left: 0;
                 width: 100%;
+                text-align: center;
+                opacity: 0;
+                transform: translateY(-10px);
+                transition: opacity 0.3s, transform 0.3s;
+            }
+
+            nav.open ul {
+                opacity: 1;
+                transform: translateY(0);
             }
 
             nav li {
                 display: block;
                 text-align: center;
                 margin: 10px 0;
+            }
+
+            nav a {
+                color: #fff;
+                font-size: 18px;
+                transition: color 0.3s;
+            }
+
+            nav a:hover {
+                color: #f6c7a2;
             }
         }
     </style>
