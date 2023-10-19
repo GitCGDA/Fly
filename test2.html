@@ -38,6 +38,7 @@
 
         /* Style the navigation menu */
         nav {
+            display: block; /* Initially visible */
             background-color: #444;
         }
 
@@ -58,13 +59,13 @@
 
         /* Style the mobile menu (initially hidden) */
         .mobile-menu {
+            display: none; /* Initially hidden */
+            background-color: #444;
             position: absolute;
             top: 0;
-            left: -100%;
+            left: 0;
             width: 80%;
-            background-color: #444;
             padding: 20px;
-            transition: left 0.5s;
         }
 
         .mobile-menu ul {
@@ -75,18 +76,10 @@
             margin-bottom: 10px;
         }
 
-        /* Media query to hide/show elements on smaller screens */
+        /* Media query to hide navigation menu on screens with a width less than 768px */
         @media screen and (max-width: 768px) {
             nav {
                 display: none;
-            }
-
-            .mobile-icon {
-                display: flex;
-            }
-
-            .mobile-menu {
-                left: 0;
             }
         }
     </style>
@@ -123,10 +116,10 @@
         const mobileMenu = document.querySelector('.mobile-menu');
 
         mobileIcon.addEventListener('click', function () {
-            if (mobileMenu.style.left === '0px' || mobileMenu.style.left === '') {
-                mobileMenu.style.left = '-100%';
+            if (mobileMenu.style.display === 'block' || mobileMenu.style.display === '') {
+                mobileMenu.style.display = 'none';
             } else {
-                mobileMenu.style.left = '0px';
+                mobileMenu.style.display = 'block';
             }
         });
     </script>
