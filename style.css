@@ -68,19 +68,7 @@ header h1 {
     margin: 3px 0;
 }
 
-@media (max-width: 768px) {
-    .desktop-menu {
-        display: none;
-    }
 
-    .mobile-icon {
-        display: flex;
-    }
-
-    .mobile-menu {
-        display: block;
-    }
-}
 
 
 
