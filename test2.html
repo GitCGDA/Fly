@@ -1,22 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* Basic styles */
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
         }
 
         header {
             background-color: #333;
             color: #fff;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
             padding: 10px 20px;
         }
 
@@ -24,85 +19,89 @@
             margin: 0;
         }
 
-        nav {
-            display: none;
-        }
-
-        .nav-links {
-            list-style: none;
+        nav ul {
+            list-style-type: none;
+            margin: 0;
             padding: 0;
-            display: flex;
         }
 
-        .nav-links li {
+        nav li {
+            display: inline;
             margin-right: 20px;
         }
 
-        .nav-links a {
+        nav a {
             text-decoration: none;
-            color: #333;
+            color: #fff;
         }
 
-        /* Mobile menu icon styles */
-        .menu-icon {
+        #menu-icon {
             display: none;
-            flex-direction: column;
             cursor: pointer;
+            font-size: 24px;
         }
 
-        .bar {
-            width: 25px;
-            height: 3px;
-            background-color: #fff;
-            margin: 3px 0;
-        }
-
-        /* Media query for mobile menu */
-        @media (max-width: 768px) {
-            .menu-icon {
-                display: flex;
+        @media screen and (max-width: 768px) {
+            nav {
+                display: none;
             }
-            .nav-links {
-                flex-direction: column;
-                align-items: center;
+            #menu-icon {
+                display: block;
+            }
+
+            #menu-icon.open {
+                display: block;
+            }
+
+            #menu-icon.close {
+                display: none;
+            }
+
+            nav ul {
+                display: block;
                 background-color: #333;
                 position: absolute;
                 top: 60px;
                 left: 0;
                 width: 100%;
-                z-index: 1;
-                display: none;
             }
-            .nav-links.active {
-                display: flex;
+
+            nav li {
+                display: block;
+                text-align: center;
+                margin: 10px 0;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Your Website Title</h1>
-        <div class="menu-icon">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
+        <h1>My Website</h1>
+        <div id="menu-icon">&#9776;</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
     </header>
-    <nav>
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
-<script>
-        const menuIcon = document.querySelector('.menu-icon');
-        const navLinks = document.querySelector('.nav-links');
 
-        menuIcon.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+    <div class="content">
+        <!-- Your website content goes here -->
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuIcon = document.getElementById("menu-icon");
+            const nav = document.querySelector("nav");
+
+            menuIcon.addEventListener("click", function () {
+                nav.classList.toggle("open");
+                menuIcon.classList.toggle("open");
+            });
         });
-</script>
+    </script>
 </body>
 </html>
