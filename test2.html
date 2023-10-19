@@ -25,7 +25,6 @@
         }
 
         .mobile-icon {
-            display: none;
             flex-direction: column;
             cursor: pointer;
         }
@@ -59,9 +58,10 @@
 
         /* Style the mobile menu (hidden by default) */
         .mobile-menu {
+            display: none;
             background-color: #444;
             position: absolute;
-            top: -100%;
+            top: 100%;
             left: 0;
             width: 100%;
             padding: 20px;
@@ -88,6 +88,7 @@
 
             .mobile-menu {
                 top: 0;
+                display: block;
             }
         }
     </style>
@@ -120,9 +121,15 @@
     </div>
     <script>
         // Toggle the mobile menu when the mobile icon is clicked
-        document.querySelector('.mobile-icon').addEventListener('click', function () {
-            const mobileMenu = document.querySelector('.mobile-menu');
-            mobileMenu.style.top = mobileMenu.style.top === '0px' ? '-100%' : '0px';
+        const mobileIcon = document.querySelector('.mobile-icon');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        mobileIcon.addEventListener('click', function () {
+            if (mobileMenu.style.display === 'block') {
+                mobileMenu.style.display = 'none';
+            } else {
+                mobileMenu.style.display = 'block';
+            }
         });
     </script>
 </body>
