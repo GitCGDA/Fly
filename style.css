@@ -68,21 +68,12 @@ header h1 {
     margin: 3px 0;
 }
 
-@media (max-width: 768px) {
-    .desktop-menu {
+/* Media query to hide navigation menu on screens with a width less than 768px */
+@media screen and (max-width: 768px) {
+    nav {
         display: none;
     }
-
-    .menu-icon {
-        display: flex;
-    }
-
-    .mobile-menu {
-        display: block;
-    }
 }
-
-
 
 
 
