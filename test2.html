@@ -1,17 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* Reset some default styles */
+        body, ul {
+            margin: 0;
+            padding: 0;
         }
 
+        /* Style the header and mobile icon */
         header {
             background-color: #333;
             color: #fff;
             display: flex;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
             padding: 10px 20px;
         }
 
@@ -19,79 +24,105 @@
             margin: 0;
         }
 
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
+        .mobile-icon {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
         }
 
-        nav li {
-            display: inline;
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 3px 0;
+        }
+
+        /* Style the navigation menu */
+        nav {
+            background-color: #444;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+        }
+
+        li {
             margin-right: 20px;
         }
 
-        nav a {
+        a {
             text-decoration: none;
             color: #fff;
         }
 
-        #menu-icon {
-            display: none;
-            cursor: pointer;
-            font-size: 24px;
+        /* Style the mobile menu (hidden by default) */
+        .mobile-menu {
+            background-color: #444;
+            position: absolute;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            transition: top 0.5s;
         }
 
+        .mobile-menu ul {
+            list-style: none;
+        }
+
+        .mobile-menu li {
+            margin-bottom: 10px;
+        }
+
+        /* Media query to hide/show elements on smaller screens */
         @media screen and (max-width: 768px) {
             nav {
                 display: none;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                background-color: #333;
-                width: 100%;
-                z-index: 1;
-                text-align: center;
-                transition: transform 0.3s ease-in-out;
-                transform: translateY(-100%);
             }
 
-            nav.open {
-                transform: translateY(0);
-                display: block;
+            .mobile-icon {
+                display: flex;
             }
 
-            #menu-icon {
-                display: block;
+            .mobile-menu {
+                top: 0;
             }
         }
     </style>
+    <title>Your Website</title>
 </head>
 <body>
     <header>
-        <h1>My Website</h1>
-        <div id="menu-icon">&#9776;</div>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
+        <h1>Your Website Title</h1>
+        <div class="mobile-icon">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
     </header>
-
-    <div class="content">
-        <!-- Your website content goes here -->
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
     </div>
-
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const menuIcon = document.getElementById("menu-icon");
-            const nav = document.querySelector("nav");
-
-            menuIcon.addEventListener("click", function () {
-                nav.classList.toggle("open");
-            });
+        // Toggle the mobile menu when the mobile icon is clicked
+        document.querySelector('.mobile-icon').addEventListener('click', function () {
+            const mobileMenu = document.querySelector('.mobile-menu');
+            mobileMenu.style.top = mobileMenu.style.top === '0px' ? '-100%' : '0px';
         });
     </script>
 </body>
