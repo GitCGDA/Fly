@@ -56,8 +56,7 @@ header h1 {
  /* Media query to hide navigation menu on screens with a width less than 768px */
  @media screen and (max-width: 768px) {
     .dekstop-menu a {
-    text-decoration: none;
-    color: #080808;
+    display: none;
 }
 
 /* Style the mobile menu icon */
