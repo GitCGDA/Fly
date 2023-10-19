@@ -36,7 +36,12 @@ header h1 {
 /* Style the mobile menu */
 .mobile-menu {
     display: none;
-    background-color: transparent; /* Set the background to transparent */
+    background-color: #444;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    padding: 20px;
 }
 
 .mobile-menu ul {
@@ -56,7 +61,7 @@ header h1 {
 
 /* Style the mobile menu icon */
 .menu-icon {
-    display: none;
+    display: ;
     flex-direction: column;
     cursor: pointer;
 }
@@ -68,12 +73,7 @@ header h1 {
     margin: 3px 0;
 }
 
-/* Media query to hide navigation menu on screens with a width less than 768px */
-@media screen and (max-width: 768px) {
-    nav {
-        display: none;
-    }
-}
+
 
 
 
