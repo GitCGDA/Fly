@@ -3,89 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Website Title</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <style>
-        /* Basic CSS for the navigation menu */
-        body {
-            font-family: Arial, sans-serif;
+        /* Your inline CSS styles here */
+        body, ul {
             margin: 0;
             padding: 0;
         }
+
+        /* Style the header */
         header {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-        }
-        nav {
+            background-color: #fff;
+            color: #333;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
         }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 20px;
-        }
-        /* Mobile menu CSS (hidden by default) */
-        #mobile-menu {
-            display: none;
+
+        /* ... (rest of your CSS styles) ... */
+
+        /* Style the footer */
+        footer {
             background-color: #333;
-            position: absolute;
-            top: 50px;
-            left: 0;
-            right: 0;
+            color: #fff;
             text-align: center;
-            z-index: 1;
-        }
-        #mobile-menu a {
-            display: block;
             padding: 10px;
-            color: #fff;
-            text-decoration: none;
-        }
-        /* Mobile menu icon CSS */
-        #menu-icon {
-            display: none;
-            cursor: pointer;
-            color: #fff;
-            font-size: 24px;
-            position: absolute;
-            top: 10px;
-            right: 20px;
         }
     </style>
+    <title>Fly</title>
 </head>
 <body>
     <header>
-        <h1>Your Website Title</h1>
-        <!-- Mobile menu icon -->
-        <div id="menu-icon">&#9776;</div>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Contact</a>
+        <h1>Fly Capital Management</h1>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <nav class="desktop-menu">
+            <ul>
+                <li><a href="investmentteam.html">Team & Philosophy</a></li>
+                <li><a href="philosophy.html">Market Insights</a></li>
+                <li><a href="services.html">Client Access</a></li>
+                <li><a href="test2.html">test</a></li>
+            </ul>
         </nav>
     </header>
-    <!-- Mobile menu (hidden by default) -->
-    <div id="mobile-menu">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
-    </div>
+    <nav class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="investmentteam.html">Team & Philosophy</a></li>
+            <li><a href="philosophy.html">Market Insights</a></li>
+            <li><a href="services.html">Client Access</a></li>
+            <li><a href="test2.html">test</a></li>
+        </ul>
+    </nav>
+    <main>
+        <!-- Your website content goes here -->
+        <section id="section1">
+            <h2>Creating Wealth.</h2>
+            <h2>The Real Thing.</h2>
+        </section>
+        <section id="section2">
+            <h3>What We Do</h3>
+            <ul>
+                <li>Service 1</li>
+                <li>Service 2</li>
+                <li>Service 3</li>
+            </ul>
+        </section>
+        <section id="section3">
+            <h3>Our Capabilities</h3>
+            <ul>
+                <!-- Your list items for section 3 go here -->
+            </ul>
+        </section>
+    </main>
+    <footer>
+        &copy; 2023 Fly Capital Management
+    </footer>
     <script>
-        // JavaScript to toggle the mobile menu
-        const mobileMenu = document.getElementById("mobile-menu");
-        const menuIcon = document.getElementById("menu-icon");
-
-        menuIcon.addEventListener("click", () => {
+        // Your JavaScript code here
+        function toggleMenu() {
+            var mobileMenu = document.getElementById("mobileMenu");
             if (mobileMenu.style.display === "block") {
                 mobileMenu.style.display = "none";
             } else {
                 mobileMenu.style.display = "block";
             }
-        });
+        }
     </script>
 </body>
 </html>
