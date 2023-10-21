@@ -31,7 +31,7 @@
             left: -100%; /* Start off-screen to the left */
             width: 30%; /* Adjusted to 30% of the screen width */
             height: 100%;
-            background-color: rgba(255, 255, 255, 0.9); /* 50% transparent background */
+            background-color: rgba(255, 255, 255, 0.5); /* 50% transparent background */
             z-index: 1;
             transition: left 0.3s ease-in-out; /* Add smooth slide-in animation */
         }
@@ -39,10 +39,13 @@
         .mobile-menu ul {
             list-style: none;
             padding: 0;
+            display: flex; /* Display menu items horizontally */
+            flex-direction: column; /* Stack items vertically for small screens */
+            align-items: center; /* Center align items */
         }
 
         .mobile-menu li {
-            margin-bottom: 10px;
+            margin: 10px 0; /* Add space between menu items */
         }
 
         .mobile-menu a {
@@ -54,7 +57,7 @@
 </head>
 <body>
     <header>
-        <h1>dFly Capital Management</h1>
+        <h1>kFly Capital Management</h1>
         <div class="menu-icon" onclick="toggleMenu()">
             <div class="bar"></div>
             <div class="bar"></div>
