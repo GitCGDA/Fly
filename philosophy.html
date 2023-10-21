@@ -3,91 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Website</title>
+    <title>Your Website Title</title>
     <style>
-        /* Style for the main navigation menu */
-        .nav {
-            display: flex;
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-        }
-        
-        .nav ul {
-            list-style: none;
-            display: flex;
+        /* Basic CSS for the navigation menu */
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
-        
-        .nav li {
-            margin-right: 20px;
-        }
-        
-        /* Style for the mobile menu */
-        .mobile-menu {
-            display: none;
+        header {
             background-color: #333;
             color: #fff;
-            position: fixed;
-            top: 0;
+            text-align: center;
+            padding: 10px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 20px;
+        }
+        /* Mobile menu CSS (hidden by default) */
+        #mobile-menu {
+            display: none;
+            background-color: #333;
+            position: absolute;
+            top: 50px;
             left: 0;
-            width: 100%;
-            padding: 20px;
-            transform: translateY(-100%);
-            transition: transform 0.3s ease-in-out;
+            right: 0;
+            text-align: center;
+            z-index: 1;
         }
-        
-        .mobile-menu.active {
-            transform: translateY(0);
-        }
-        
-        /* Style for the mobile icon */
-        .mobile-icon {
+        #mobile-menu a {
             display: block;
-            text-align: right;
-            margin-right: 20px;
-            cursor: pointer;
+            padding: 10px;
+            color: #fff;
+            text-decoration: none;
         }
-        
-        /* Hide the mobile icon on larger screens */
-        @media (min-width: 768px) {
-            .mobile-icon {
-                display: none;
-            }
-            .nav ul {
-                display: flex;
-            }
+        /* Mobile menu icon CSS */
+        #menu-icon {
+            display: none;
+            cursor: pointer;
+            color: #fff;
+            font-size: 24px;
+            position: absolute;
+            top: 10px;
+            right: 20px;
         }
     </style>
 </head>
 <body>
-    <div class="nav">
+    <header>
         <h1>Your Website Title</h1>
-        <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Services</li>
-            <li>Contact</li>
-        </ul>
-        <div class="mobile-icon" onclick="toggleMobileMenu()">☰</div>
+        <!-- Mobile menu icon -->
+        <div id="menu-icon">&#9776;</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    <!-- Mobile menu (hidden by default) -->
+    <div id="mobile-menu">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
     </div>
-    
-    <div class="mobile-menu">
-        <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Services</li>
-            <li>Contact</li>
-        </ul>
-    </div>
-
     <script>
-        // Function to toggle the mobile menu
-        function toggleMobileMenu() {
-            const mobileMenu = document.querySelector(".mobile-menu");
-            mobileMenu.classList.toggle("active");
-        }
+        // JavaScript to toggle the mobile menu
+        const mobileMenu = document.getElementById("mobile-menu");
+        const menuIcon = document.getElementById("menu-icon");
+
+        menuIcon.addEventListener("click", () => {
+            if (mobileMenu.style.display === "block") {
+                mobileMenu.style.display = "none";
+            } else {
+                mobileMenu.style.display = "block";
+            }
+        });
     </script>
 </body>
 </html>
