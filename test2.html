@@ -3,125 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <style>
-        /* Reset some default styles */
+        /* Your inline CSS styles here */
         body, ul {
             margin: 0;
             padding: 0;
         }
 
-        /* Style the header and mobile icon */
+        /* Style the header */
         header {
-            background-color: #333;
-            color: #fff;
+            background-color: #fff;
+            color: #333;
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 10px 20px;
         }
 
-        h1 {
-            margin: 0;
-        }
-
-        .mobile-icon {
-            flex-direction: column;
+        /* Style the mobile menu icon */
+        .menu-icon {
+            display: none;
             cursor: pointer;
         }
 
         .bar {
-            width: 25px;
+            width: 30px;
             height: 3px;
-            background-color: #fff;
-            margin: 3px 0;
+            background-color: #080808;
+            margin: 6px 0;
         }
 
-        /* Style the navigation menu */
-        nav {
-            background-color: #444;
-            display: flex; /* Display navigation menu next to the header */
-        }
+        /* ... (rest of your CSS styles) ... */
 
-        ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-        }
-
-        li {
-            margin-right: 20px;
-        }
-
-        a {
-            text-decoration: none;
-            color: #fff;
-        }
-
-        /* Style the mobile menu (initially hidden) */
+        /* Style the mobile menu */
         .mobile-menu {
-            display: none; /* Initially hidden */
-            background-color: #444;
-            position: absolute;
+            display: block;
+            position: fixed;
             top: 0;
-            left: 0;
-            width: 80%;
-            padding: 20px;
+            right: -100%;
+            width: 80%; /* Adjusted to 80% of the screen width */
+            height: 100%;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+            transition: right 0.3s ease-in-out;
         }
 
         .mobile-menu ul {
             list-style: none;
+            padding: 0;
         }
 
         .mobile-menu li {
-            margin-bottom: 10px;
+            text-align: center;
+            padding: 20px 0;
         }
 
-        /* Media query to hide navigation menu on screens with a width less than 768px */
-        @media screen and (max-width: 768px) {
-            nav {
-                display: none;
-            }
+        .mobile-menu a {
+            text-decoration: none;
+            color: #080808;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .mobile-menu-opened {
+            right: 0;
         }
     </style>
-    <title>Your Website</title>
+    <title>Fly</title>
 </head>
 <body>
     <header>
-        <h1>Your Website Title</h1>
-        <div class="mobile-icon">
+        <h1>Fly Capital Management</h1>
+        <div class="menu-icon" onclick="toggleMenu()">
             <div class="bar"></div>
             <div class="bar"></div>
             <div class="bar"></div>
         </div>
+        <nav class="desktop-menu">
+            <ul>
+                <li><a href="investmentteam.html">Team & Philosophy</a></li>
+                <li><a href="philosophy.html">Market Insights</a></li>
+                <li><a href="services.html">Client Access</a></li>
+                <li><a href="test2.html">test</a></li>
+            </ul>
+        </nav>
     </header>
-    <nav>
+    <nav class="mobile-menu" id="mobileMenu">
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="investmentteam.html">Team & Philosophy</a></li>
+            <li><a href="philosophy.html">Market Insights</a></li>
+            <li><a href="services.html">Client Access</a></li>
+            <li><a href="test2.html">test</a></li>
         </ul>
     </nav>
-    <div class="mobile-menu">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </div>
+    <main>
+        <!-- Your website content goes here -->
+        <section id="section1">
+            <h2>Creating Wealth.</h2>
+            <h2>The Real Thing.</h2>
+        </section>
+        <section id="section2">
+            <h3>What We Do</h3>
+            <ul>
+                <li>Service 1</li>
+                <li>Service 2</li>
+                <li>Service 3</li>
+            </ul>
+        </section>
+        <section id="section3">
+            <h3>Our Capabilities</h3>
+            <ul>
+                <!-- Your list items for section 3 go here -->
+            </ul>
+        </section>
+    </main>
+    <footer>
+        &copy; 2023 Fly Capital Management
+    </footer>
     <script>
-        // Toggle the mobile menu when the mobile icon is clicked
-        const mobileIcon = document.querySelector('.mobile-icon');
-        const mobileMenu = document.querySelector('.mobile-menu');
-
-        mobileIcon.addEventListener('click', function () {
-            if (mobileMenu.style.display === 'block' || mobileMenu.style.display === '') {
-                mobileMenu.style.display = 'none';
-            } else {
-                mobileMenu.style.display = 'block';
-            }
-        });
+        // Your JavaScript code here
+        function toggleMenu() {
+            var mobileMenu = document.getElementById("mobileMenu");
+            mobileMenu.classList.toggle("mobile-menu-opened");
+        }
     </script>
 </body>
 </html>
