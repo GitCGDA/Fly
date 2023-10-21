@@ -1,92 +1,133 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Website Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <style>
-        /* CSS Styles */
+        /* Your inline CSS styles here */
+        body, ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Style the header */
         header {
-            background-color: #333;
-            color: #fff;
+            background-color: #fff;
+            color: #333;
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 10px 20px;
         }
 
-        h1 {
-            margin: 0;
-        }
-
+        /* Style the mobile menu icon */
         .menu-icon {
             display: none;
-            flex-direction: column;
             cursor: pointer;
         }
 
         .bar {
             width: 30px;
             height: 3px;
+            background-color: #080808;
+            margin: 6px 0;
+        }
+
+        /* ... (rest of your CSS styles) ... */
+
+        /* Style the mobile menu */
+        .mobile-menu {
+            display: block;
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%; /* Adjusted to 80% of the screen width */
+            height: 100%;
             background-color: #fff;
-            margin: 3px 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+            transition: right 0.3s ease-in-out;
         }
 
-        .menu {
+        .mobile-menu ul {
             list-style: none;
-            margin: 0;
             padding: 0;
-            display: flex;
         }
 
-        .menu li {
-            margin-right: 20px;
+        .mobile-menu li {
+            text-align: center;
+            padding: 20px 0;
         }
 
-        .menu a {
+        .mobile-menu a {
             text-decoration: none;
-            color: #fff;
+            color: #080808;
+            font-size: 18px;
+            font-weight: 600;
         }
 
-        /* Media query for mobile responsiveness */
-        @media screen and (max-width: 768px) {
-            .menu {
-                display: none;
-                flex-direction: column;
-            }
-
-            .menu.show {
-                display: flex;
-            }
-
-            .menu-icon {
-                display: flex;
-            }
+        .mobile-menu-opened {
+            right: 0;
         }
     </style>
+    <title>Fly</title>
 </head>
 <body>
     <header>
-        <h1>Website Title</h1>
-        <nav>
-            <div class="menu-icon">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
-            <ul class="menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
+        <h1>Fly Capital Management</h1>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <nav class="desktop-menu">
+            <ul>
+                <li><a href="investmentteam.html">Team & Philosophy</a></li>
+                <li><a href="philosophy.html">Market Insights</a></li>
+                <li><a href="services.html">Client Access</a></li>
+                <li><a href="test2.html">test</a></li>
             </ul>
         </nav>
     </header>
-    
+    <nav class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="investmentteam.html">Team & Philosophy</a></li>
+            <li><a href="philosophy.html">Market Insights</a></li>
+            <li><a href="services.html">Client Access</a></li>
+            <li><a href="test2.html">test</a></li>
+        </ul>
+    </nav>
+    <main>
+        <!-- Your website content goes here -->
+        <section id="section1">
+            <h2>Creating Wealth.</h2>
+            <h2>The Real Thing.</h2>
+        </section>
+        <section id="section2">
+            <h3>What We Do</h3>
+            <ul>
+                <li>Service 1</li>
+                <li>Service 2</li>
+                <li>Service 3</li>
+            </ul>
+        </section>
+        <section id="section3">
+            <h3>Our Capabilities</h3>
+            <ul>
+                <!-- Your list items for section 3 go here -->
+            </ul>
+        </section>
+    </main>
+    <footer>
+        &copy; 2023 Fly Capital Management
+    </footer>
     <script>
-        // JavaScript for mobile menu toggle
-        document.querySelector('.menu-icon').addEventListener('click', function() {
-            document.querySelector('.menu').classList.toggle('show');
-        });
+        // Your JavaScript code here
+        function toggleMenu() {
+            var mobileMenu = document.getElementById("mobileMenu");
+            mobileMenu.classList.toggle("mobile-menu-opened");
+        }
     </script>
-    <!-- Rest of your website content goes here -->
 </body>
 </html>
