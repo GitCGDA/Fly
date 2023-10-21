@@ -4,81 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* Styles for mobile icon */
-        .mobile-icon {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
+        /* Reset some default styles */
+        body, ul {
+            margin: 0;
+            padding: 0;
         }
 
-        .bar {
-            width: 30px;
-            height: 3px;
+        header {
             background-color: #333;
-            margin: 3px 0;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
         }
 
-        /* Styles for desktop menu */
-        .desktop-menu {
+        .title {
+            font-size: 24px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
             list-style: none;
+            display: flex;
         }
 
-        .desktop-menu li {
-            display: inline;
-            margin-right: 20px;
+        nav li {
+            margin: 0 20px;
         }
 
-        .desktop-menu a {
-            text-decoration: none;
-            color: #333;
-        }
-
-        /* Styles for mobile menu */
-        .mobile-menu {
-            display: none;
-            flex-direction: column;
-            background-color: #333;
-            position: absolute;
-            top: 70px;
-            right: 0;
-            width: 100%;
-            padding: 20px;
-        }
-
-        .mobile-menu li {
-            margin-bottom: 10px;
-        }
-
-        .mobile-menu a {
+        a {
             text-decoration: none;
             color: #fff;
         }
 
-        /* Media query for hiding/showing elements based on screen width */
-        @media screen and (max-width: 768px) {
+        .mobile-menu-icon {
+            display: none; /* Hide mobile icon by default */
+            flex-direction: column;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 3px 0;
+            border-radius: 5px;
+        }
+
+        @media (max-width: 767px) {
             .desktop-menu {
-                display: none;
+                display: none; /* Hide desktop menu on small screens */
             }
 
-            .mobile-icon {
-                display: flex;
+            .mobile-menu-icon {
+                display: flex; /* Show mobile icon */
             }
 
             .mobile-menu {
-                display: none;
+                display: none; /* Hide mobile menu by default */
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background-color: #333;
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
-    <title>Your Website Title</title>
 </head>
 <body>
     <header>
-        <div class="mobile-icon">
+        <div class="title">Your Website</div>
+        <div class="mobile-menu-icon">
             <div class="bar"></div>
             <div class="bar"></div>
             <div class="bar"></div>
         </div>
-        <h1>Your Website Title</h1>
         <nav>
             <ul class="desktop-menu">
                 <li><a href="#">Home</a></li>
@@ -94,17 +102,17 @@
             </ul>
         </nav>
     </header>
-
-    <div class="content">
-        <!-- Your website content goes here -->
-    </div>
-
+    <main>
+        <!-- Your main content goes here -->
+    </main>
     <script>
-        const mobileIcon = document.querySelector('.mobile-icon');
-        const mobileMenu = document.querySelector('.mobile-menu');
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
+            const mobileMenu = document.querySelector('.mobile-menu');
 
-        mobileIcon.addEventListener('click', () => {
-            mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+            mobileMenuIcon.addEventListener('click', function () {
+                mobileMenu.classList.toggle('show-mobile-menu');
+            });
         });
     </script>
 </body>
