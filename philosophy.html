@@ -32,7 +32,7 @@
             width: 100%;
             background-color: #fff;
             z-index: 1;
-            transition: transform 0.3s ease-in-out;
+            transition: top 0.3s ease-in-out; /* Add smooth slide-in animation */
         }
 
         .mobile-menu ul {
@@ -53,7 +53,7 @@
 </head>
 <body>
     <header>
-        <h1>BFly Capital Management</h1>
+        <h1>tyFly Capital Management</h1>
         <div class="menu-icon" onclick="toggleMenu()">
             <div class="bar"></div>
             <div class="bar"></div>
@@ -104,10 +104,10 @@
         // Your JavaScript code here
         function toggleMenu() {
             var mobileMenu = document.getElementById("mobileMenu");
-            if (mobileMenu.style.transform === "translateY(-100%)") {
-                mobileMenu.style.transform = "translateY(0)";
+            if (mobileMenu.style.top === "0px") {
+                mobileMenu.style.top = "-100%";
             } else {
-                mobileMenu.style.transform = "translateY(-100%)";
+                mobileMenu.style.top = "0px";
             }
         }
     </script>
