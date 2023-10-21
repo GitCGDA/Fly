@@ -3,36 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fly Capital Management</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Styles for mobile icon */
+        .mobile-icon {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .bar {
+            width: 30px;
+            height: 3px;
+            background-color: #333;
+            margin: 3px 0;
+        }
+
+        /* Styles for desktop menu */
+        .desktop-menu {
+            list-style: none;
+        }
+
+        .desktop-menu li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        .desktop-menu a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        /* Styles for mobile menu */
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            background-color: #333;
+            position: absolute;
+            top: 70px;
+            right: 0;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .mobile-menu li {
+            margin-bottom: 10px;
+        }
+
+        .mobile-menu a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        /* Media query for hiding/showing elements based on screen width */
+        @media screen and (max-width: 768px) {
+            .desktop-menu {
+                display: none;
+            }
+
+            .mobile-icon {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: none;
+            }
+        }
+    </style>
+    <title>Your Website Title</title>
 </head>
 <body>
     <header>
-        <h1><a href="index.html">Fly Capital Management</a></h1>
-    </header>
-    <header>
+        <div class="mobile-icon">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <h1>Your Website Title</h1>
         <nav>
-            <ul>
-                <li><a href="investmentteam.html">Investment Team</a></li>
-                <li><a href="philosophy.html">Philosophy</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
+            <ul class="desktop-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <ul class="mobile-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <header>
-        <h1>Services</h1>
-    </header>
+    <div class="content">
+        <!-- Your website content goes here -->
+    </div>
 
-    <section>
-        <h1>Make you richer than your friends</h1>
-        <p>Add ons: mental health management (with extra charges)</p>
-    </section>
+    <script>
+        const mobileIcon = document.querySelector('.mobile-icon');
+        const mobileMenu = document.querySelector('.mobile-menu');
 
-
-    <footer>
-        &copy; 2023 Fly Capital Management. All rights reserved.
-    </footer>
+        mobileIcon.addEventListener('click', () => {
+            mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
 </body>
 </html>
