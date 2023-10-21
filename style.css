@@ -39,7 +39,7 @@ header h1 {
     position: fixed;
     top: 6.4%;
     left: -100%; /* Start off-screen to the left */
-    width: 100%; /* Adjusted to 30% of the screen width */
+    width: 90%; /* Adjusted to 30% of the screen width */
     height: 100%;
     background-color: rgba(255, 255, 255, 0.95); /* 50% transparent background */
     z-index: 1;
