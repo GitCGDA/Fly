@@ -27,7 +27,7 @@
         .mobile-menu {
             display: block; /* Initially set to block to ensure it's visible */
             position: fixed;
-            top: 7%;
+            top: 6.5%;
             left: -100%; /* Start off-screen to the left */
             width: 30%; /* Adjusted to 30% of the screen width */
             height: 100%;
@@ -39,9 +39,6 @@
         .mobile-menu ul {
             list-style: none;
             padding: 0;
-            display: flex; /* Display menu items horizontally */
-            flex-direction: column; /* Stack items vertically for small screens */
-            align-items: center; /* Center align items */
         }
 
         .mobile-menu li {
@@ -52,16 +49,12 @@
             text-decoration: none;
             color: #080808;
         }
-
-        .mobile-menu-opened {
-            left: 0; /* Slide in from the left when opened */
-        }
     </style>
     <title>Fly</title>
 </head>
 <body>
     <header>
-        <h1>gFly Capital Management</h1>
+        <h1>sFly Capital Management</h1>
         <div class="menu-icon" onclick="toggleMenu()">
             <div class="bar"></div>
             <div class="bar"></div>
@@ -112,7 +105,11 @@
         // Your JavaScript code here
         function toggleMenu() {
             var mobileMenu = document.getElementById("mobileMenu");
-            mobileMenu.classList.toggle("mobile-menu-opened");
+            if (mobileMenu.style.left === "0px") {
+                mobileMenu.style.left = "-100%";
+            } else {
+                mobileMenu.style.left = "0px";
+            }
         }
     </script>
 </body>
