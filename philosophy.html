@@ -3,36 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fly Capital Management</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        /* Mobile Menu Styles (Initially Hidden) */
+        #mobile-menu {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        /* Mobile Menu Button Styles */
+        #mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+    <title>Your Website</title>
 </head>
 <body>
     <header>
-        <h1><a href="index.html">Fly Capital Management</a></h1>
-    </header>
-    <header>
-        <nav>
+        <h1>Your Website</h1>
+        <button id="mobile-menu-toggle">&#9776;</button>
+        <nav id="main-menu">
             <ul>
-                <li><a href="investmentteam.html">Investment Team</a></li>
-                <li><a href="philosophy.html">Philosophy</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
         </nav>
     </header>
+    <div id="mobile-menu">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+    <main>
+        <!-- Your website content goes here -->
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
 
-    <header>
-        <h1>Investment Philosophy</h1>
-    </header>
-
-    <section>
-        <h1>Rule No.1: Never lose money</h1>
-        <p>Rule No.2: Remember rule no.1</p>
-    </section>
-
-
-    <footer>
-        &copy; 2023 Fly Capital Management. All rights reserved.
-    </footer>
+            mobileMenuToggle.addEventListener('click', function () {
+                if (mobileMenu.style.transform === 'translateY(-100%)') {
+                    mobileMenu.style.transform = 'translateY(0)';
+                } else {
+                    mobileMenu.style.transform = 'translateY(-100%)';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
