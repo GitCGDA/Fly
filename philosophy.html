@@ -52,12 +52,16 @@
             text-decoration: none;
             color: #080808;
         }
+
+        .mobile-menu-opened {
+            left: 0; /* Slide in from the left when opened */
+        }
     </style>
     <title>Fly</title>
 </head>
 <body>
     <header>
-        <h1>kFly Capital Management</h1>
+        <h1>gFly Capital Management</h1>
         <div class="menu-icon" onclick="toggleMenu()">
             <div class="bar"></div>
             <div class="bar"></div>
@@ -108,11 +112,7 @@
         // Your JavaScript code here
         function toggleMenu() {
             var mobileMenu = document.getElementById("mobileMenu");
-            if (mobileMenu.style.left === "0px") {
-                mobileMenu.style.left = "-100%";
-            } else {
-                mobileMenu.style.left = "0px";
-            }
+            mobileMenu.classList.toggle("mobile-menu-opened");
         }
     </script>
 </body>
