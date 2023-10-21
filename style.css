@@ -35,32 +35,28 @@ header h1 {
 
 /* Style the mobile menu */
 .mobile-menu {
-    display: none; /* Initially hidden */
-    background-color: #444;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 80%;
-    padding: 20px;
+    display: none;
+    background-color: transparent; /* Set the background to transparent */
 }
 
 .mobile-menu ul {
     list-style: none;
-    }
-
-.mobile-menu li {
-    margin-bottom: 10px;
+    padding: ;
+    background-color: rgba(0, 0, 0, 0.16); /* Add a semi-transparent background for the menu items */
 }
 
+.mobile-menu li {
+    margin-bottom: ;
+}
 
- /* Media query to hide navigation menu on screens with a width less than 768px */
- @media screen and (max-width: 768px) {
-    .dekstop-menu a {
-    display: none;
+.mobile-menu a {
+    text-decoration: none;
+    color: #080808;
 }
 
 /* Style the mobile menu icon */
-.mobile-icon {
+.menu-icon {
+    display: none;
     flex-direction: column;
     cursor: pointer;
 }
@@ -72,7 +68,19 @@ header h1 {
     margin: 3px 0;
 }
 
+@media (max-width: 768px) {
+    .desktop-menu {
+        display: none;
+    }
 
+    .menu-icon {
+        display: flex;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+}
 
 
 
