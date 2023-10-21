@@ -16,6 +16,8 @@ header {
 
 header h1 {
     margin: 0;
+    text-decoration: none; /* Remove underline */
+    color: #333;
 }
 
 /* Style the navigation menu */
