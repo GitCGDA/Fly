@@ -151,6 +151,14 @@ h3 {
     text-align: center;
 }
 
+#section4 {
+    background-color: #ebf2f9;
+    padding-top: 10px; /* Add 30px of padding to the top */
+    padding-bottom: 200px; /* Add 10px of padding to the bottom */
+    font-size: 18px;
+    text-align: center;
+}
+
 
 
 
