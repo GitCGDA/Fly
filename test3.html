@@ -20,14 +20,14 @@
 </form>
 
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $name = $_POST['name'];
   $email = $_POST['email'];
   $message = $_POST['message'];
   
   // Here you can process the form data, for example, send an email
   // Replace 'your_email@example.com' with your actual email address
-  $to = 'your_email@example.com';
+  $to = 'cgda@hotmail.co.uk';
   $subject = 'Contact Form Submission';
   $message_body = "Name: $name\nEmail: $email\n\n$message";
   $headers = "From: $email";
@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   } else {
     echo "<p>Sorry, there was an error sending your message. Please try again later.</p>";
   }
-}
+  }
 ?>
 
 </body>
