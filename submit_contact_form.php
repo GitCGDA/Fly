@@ -1,5 +1,5 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if (isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
     $email = $_POST['email'];
     $message = $_POST['message'];
@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<p>Sorry, there was an error sending your message. Please try again later.</p>";
     }
 } else {
-    // Handle the case if the form is accessed directly without submission
-    echo "<p>This page cannot be accessed directly.</p>";
+    // Handle the case if 'REQUEST_METHOD' is not set or not equal to 'POST'
+    echo "<p>This script should be accessed via a POST request.</p>";
 }
 ?>
